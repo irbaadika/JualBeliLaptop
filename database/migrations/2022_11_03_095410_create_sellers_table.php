@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('npwp');
             $table->string('alamat');
             $table->string('password');
-            $table->string('verify');
+            $table->string('verify')->default(0);
             $table->string('photo')->nullable();
             $table->string('doc');
             $table->rememberToken();
