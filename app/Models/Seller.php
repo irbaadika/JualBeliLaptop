@@ -14,6 +14,7 @@ class Seller extends Model
         'name',
         'toko',
         'email',
+        'phone',
         'npwp',
         'alamat',
         'password',
