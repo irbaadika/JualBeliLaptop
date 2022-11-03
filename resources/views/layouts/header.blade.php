@@ -11,11 +11,7 @@
       <i class="uil uil-times-circle"></i>
     </button>
     <nav>
-      <ul
-        id="primary-navigation"
-        data-visible="false"
-        class="primary-navigation flex"
-      >
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation flex" >
         <li>
           <a class="active fs-100 fs-montserrat bold-500" href="index.html"
             >Home</a
@@ -51,28 +47,45 @@
   </div>
 
   <div class="header-login flex">
-    <p class="fs-100 fs-montserrat bold-500">login</p>
+    <nav>
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation flex" >
+        <li>
+          <a class="fs-100 fs-montserrat bold-500" href="/login"
+            >Login</a>
+        </li>
+        <li>
+          <i class="uil uil-search"></i>
+        </li>
+        {{-- <li>
+          <i id="cart-box" aria-controls="cart-icon" class="uil uil-shopping-bag" ></i>
+          <!-- =================1111111111================== -->
+          <div id="cart-icon" data-visible="false" class="cart-icon">
+            <div class="shopping flex">
+              <p>Shopping Basket</p>
+              <i id="cross-btn" class="uil uil-times"></i>
+            </div>
+            <div class="cart bold-800 flex">
+              <i class="uil uil-shopping-cart-alt"></i>
+              <p>Cart Is Empty</p>
+
+              <!-- ================================================== -->
+
+              <!-- ================================================== -->
+          </div>
+        </li> --}}
+      </ul>
+    </nav>
+    {{-- <a href="/login">
+    <p class="fs-100 fs-montserrat bold-500">login</p></a>
+    
     <i class="uil uil-search"></i>
     <i
       id="cart-box"
       aria-controls="cart-icon"
       class="uil uil-shopping-bag"
-    ></i>
+    ></i> --}}
 
-    <!-- =================1111111111================== -->
-    <div id="cart-icon" data-visible="false" class="cart-icon">
-      <div class="shopping flex">
-        <p>Shopping Basket</p>
-        <i id="cross-btn" class="uil uil-times"></i>
-      </div>
-      <div class="cart bold-800 flex">
-        <i class="uil uil-shopping-cart-alt"></i>
-        <p>Cart Is Empty</p>
-
-        <!-- ================================================== -->
-
-        <!-- ================================================== -->
-      </div>
+    
     </div>
   </div>
   <div class="mobile-open-btn"><i class="uil uil-align-right"></i></div>
