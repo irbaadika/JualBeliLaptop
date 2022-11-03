@@ -19,8 +19,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
+        'role',
+        'verify',
+        'photo',
     ];
 
     /**
@@ -41,4 +45,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class);
+    }
+    public function alamat()
+    {
+        return $this->hasMany(Alamat::class);
+    }
+    public function keranjang()
+    {
+        return $this->hasMany(Keranjang::class);
+    }
+    
 }
