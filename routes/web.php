@@ -19,6 +19,22 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/shop', function () {
+    return view('shop');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/product', function () {
+    return view('product');
+});
+
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
 Route::post('/login', [LoginController::class, 'authenticate']);

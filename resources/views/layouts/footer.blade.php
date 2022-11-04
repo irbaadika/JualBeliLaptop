@@ -38,16 +38,16 @@
         <h3 class="fs-poppins fs-200 bold-800">Quick Links</h3>
         <ul>
           <li>
-            <a class="fs-montserrat text-black fs-200" href="#">Home</a>
+            <a class="fs-montserrat text-black fs-200" href="/">Home</a>
           </li>
           <li>
-            <a class="fs-montserrat text-black fs-200" href="#">About</a>
+            <a class="fs-montserrat text-black fs-200" href="/about">About</a>
           </li>
           <li>
-            <a class="fs-montserrat text-black fs-200" href="#">Shop</a>
+            <a class="fs-montserrat text-black fs-200" href="/shop">Shop</a>
           </li>
           <li>
-            <a class="fs-montserrat text-black fs-200" href="#">Contact</a>
+            <a class="fs-montserrat text-black fs-200" href="/contactus">Contact</a>
           </li>
         </ul>
       </div>

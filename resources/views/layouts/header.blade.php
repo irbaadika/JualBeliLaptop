@@ -13,32 +13,27 @@
     <nav>
       <ul id="primary-navigation" data-visible="false" class="primary-navigation flex" >
         <li>
-          <a class="active fs-100 fs-montserrat bold-500" href="index.html"
+          <a class="active fs-100 fs-montserrat bold-500" href="/"
             >Home</a
           >
         </li>
         <li>
-          <a class="fs-100 fs-montserrat bold-500" href="shop.html"
+          <a class="fs-100 fs-montserrat bold-500" href="/shop"
             >Shop</a
           >
         </li>
         <li>
-          <a class="fs-100 fs-montserrat bold-500" href="about.html"
+          <a class="fs-100 fs-montserrat bold-500" href="/about"
             >About Us</a
           >
         </li>
         <li>
-          <a class="fs-100 fs-montserrat bold-500" href="blog.html"
-            >Blog</a
-          >
-        </li>
-        <li>
-          <a class="fs-100 fs-montserrat bold-500" href="contactus.html"
+          <a class="fs-100 fs-montserrat bold-500" href="/contactus"
             >Contact Us</a
           >
         </li>
         <li>
-          <a class="fs-100 fs-montserrat bold-500" href="cart.html"
+          <a class="fs-100 fs-montserrat bold-500" href="/cart"
             >Cart page</a
           >
         </li>
