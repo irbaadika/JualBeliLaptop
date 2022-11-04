@@ -170,7 +170,7 @@
     <!-- ===========================Heading======================== -->
     <section class="best-Seller related-product">
       <div class="product grid">
-        <img src="/image/p-2.jpg" alt="" />
+        <img src="/image/p-2.png" alt="" />
         <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
         <p class="fs-poppins bold-500">$995.00</p>
 
@@ -182,7 +182,7 @@
         <!-- ===================================== -->
       </div>
       <div class="product grid">
-        <img src="/image/p-3.jpg" alt="" />
+        <img src="/image/p-3.png" alt="" />
         <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
         <p class="fs-poppins bold-500">$995.00</p>
 
@@ -194,7 +194,7 @@
         <!-- ===================================== -->
       </div>
       <div class="product grid">
-        <img src="/image/p-4.jpg" alt="" />
+        <img src="/image/p-4.png" alt="" />
         <p class="fs-poppins bold-500">Game Console Controller Cable</p>
         <p class="fs-poppins bold-500">$995.00</p>
 
