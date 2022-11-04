@@ -41,8 +41,8 @@
 
         <section class="shop-product grid">
           <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
+            <img src="image/p-3.png" alt="" />
+            <p class="fs-montserrat bold-600">Asus ZenBook 2 Pro</p>
             <div class="shop-btn flex">
               <button class="bg-red text-white fs-montserrat"><a href="/product">Add To Cart</a>
               </button>
@@ -59,8 +59,8 @@
 
           </div>
           <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
+            <img src="image/p-1.png" alt="" />
+            <p class="fs-montserrat bold-600">Asus TUF Gaming</p>
             <div class="shop-btn flex">
               <button class="bg-red text-white fs-montserrat">
                 Add To Cart
@@ -69,8 +69,8 @@
             </div>
           </div>
           <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
+            <img src="image/p-2.png" alt="" />
+            <p class="fs-montserrat bold-600">Lenovo Legion 5</p>
             <div class="shop-btn flex">
               <button class="bg-red text-white fs-montserrat">
                 Add To Cart
@@ -79,8 +79,8 @@
             </div>
           </div>
           <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
+            <img src="image/p-4.png" alt="" />
+            <p class="fs-montserrat bold-600">Asus ROG Strix</p>
             <div class="shop-btn flex">
               <button class="bg-red text-white fs-montserrat">
                 Add To Cart
@@ -89,45 +89,8 @@
             </div>
           </div>
           <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
-            <div class="shop-btn flex">
-              <button class="bg-red text-white fs-montserrat">
-                Add To Cart
-              </button>
-              <p class="fs-montserrat bold-700">$ 995.00</p>
-            </div>
-               <!-- ===============Pop-Up========================== -->
-
-               <div class="pup-up">
-                <p class="fs-poppins">Sell</p>
-            </div>
-
-            <!-- ===============Pop-Up========================== -->
-          </div>
-          <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
-            <div class="shop-btn flex">
-              <button class="bg-red text-white fs-montserrat">
-                Add To Cart
-              </button>
-              <p class="fs-montserrat bold-700">$ 995.00</p>
-            </div>
-          </div>
-          <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
-            <div class="shop-btn flex">
-              <button class="bg-red text-white fs-montserrat">
-                Add To Cart
-              </button>
-              <p class="fs-montserrat bold-700">$ 995.00</p>
-            </div>
-          </div>
-          <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
+            <img src="image/p-3.png" alt="" />
+            <p class="fs-montserrat bold-600">Laptop</p>
             <div class="shop-btn flex">
               <button class="bg-red text-white fs-montserrat">
                 Add To Cart
@@ -143,8 +106,45 @@
             <!-- ===============Pop-Up========================== -->
           </div>
           <div class="product-list grid">
-            <img src="image/p-3.jpg" alt="" />
-            <p class="fs-montserrat bold-600">Beats</p>
+            <img src="image/p-3.png" alt="" />
+            <p class="fs-montserrat bold-600">Laptop</p>
+            <div class="shop-btn flex">
+              <button class="bg-red text-white fs-montserrat">
+                Add To Cart
+              </button>
+              <p class="fs-montserrat bold-700">$ 995.00</p>
+            </div>
+          </div>
+          <div class="product-list grid">
+            <img src="image/p-3.png" alt="" />
+            <p class="fs-montserrat bold-600">Laptop</p>
+            <div class="shop-btn flex">
+              <button class="bg-red text-white fs-montserrat">
+                Add To Cart
+              </button>
+              <p class="fs-montserrat bold-700">$ 995.00</p>
+            </div>
+          </div>
+          <div class="product-list grid">
+            <img src="image/p-3.png" alt="" />
+            <p class="fs-montserrat bold-600">Laptop</p>
+            <div class="shop-btn flex">
+              <button class="bg-red text-white fs-montserrat">
+                Add To Cart
+              </button>
+              <p class="fs-montserrat bold-700">$ 995.00</p>
+            </div>
+               <!-- ===============Pop-Up========================== -->
+
+               <div class="pup-up">
+                <p class="fs-poppins">Sell</p>
+            </div>
+
+            <!-- ===============Pop-Up========================== -->
+          </div>
+          <div class="product-list grid">
+            <img src="image/p-3.png" alt="" />
+            <p class="fs-montserrat bold-600">Laptop</p>
             <div class="shop-btn flex">
               <button class="bg-red text-white fs-montserrat">
                 Add To Cart

@@ -4,12 +4,12 @@
 <main class="hero-section">
   <div>
     <h1 class="fs-200 fs-poppins">
-      Beats Solo
+      LAUNCH NOW
       <span class="block lineheight fs-300 bold-900 big-wireless fs-poppins"
-        >Wireless</span
+        >New Arrival</span
       ><span
         class="text-white fs-900 uppercase lineheight-2 bold-bolder fs-poppins"
-        >HeadPhone</span
+        >laptops</span
       >
     </h1>
     <img src="image/image1.png" alt="" />
