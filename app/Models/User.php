@@ -58,5 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Keranjang::class);
     }
+    public function seller()
+    {
+        return $this->hasOne(Seller::class);
+    }
     
 }
