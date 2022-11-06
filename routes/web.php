@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardCategoryController;
+use App\Http\Controllers\DashboardMerkController;
+use App\Http\Controllers\DashboardProductController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DahsboardBuyerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,16 +44,24 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'index']);
 
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::resource('/admin/category', DashboardCategoryController::class);
+
+Route::resource('/admin/merk', DashboardMerkController::class);
+
+Route::resource('/admin/product', DashboardProductController::class);
+
+Route::resource('/admin/user', DashboardAdminController::class);
+
+Route::resource('/admin/buyer', DahsboardBuyerController::class);
 
 
