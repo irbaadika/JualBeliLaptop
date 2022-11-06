@@ -19,6 +19,7 @@ class Seller extends Model
         'alamat',
         'password',
         'verify',
+        'user_id',
         'photo',
         'doc'
     ];
@@ -30,5 +31,9 @@ class Seller extends Model
     public function product()
     {
         return $this->hasMany(Product::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

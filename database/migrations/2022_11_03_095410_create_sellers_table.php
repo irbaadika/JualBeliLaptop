@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('password');
             $table->string('verify')->default(0);
+            $table->string('user_id');
             $table->string('photo')->nullable();
             $table->string('doc');
             $table->rememberToken();
