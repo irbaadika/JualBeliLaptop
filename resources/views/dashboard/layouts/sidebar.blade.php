@@ -14,6 +14,23 @@
         </a>
       </li> --}}
       <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#admin" aria-expanded="false" aria-controls="admin">
+          <i class="menu-icon mdi mdi-account-circle-outline"></i>
+          <span class="menu-title">Admin</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="admin">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="/admin/user">Manage Admin</a></li>
+          </ul>
+        </div>
+        <div class="collapse" id="admin">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="/admin/user/create">Add Admin</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#buyer" aria-expanded="false" aria-controls="buyer">
           <i class="menu-icon mdi mdi-account-multiple-outline"></i>
           <span class="menu-title">Buyer</span>
@@ -38,37 +55,27 @@
         </a>
         <div class="collapse" id="seller">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/seller/user">Manage Seller</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/seller">Manage Seller</a></li>
           </ul>
         </div>
         <div class="collapse" id="seller">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/seller/user/create">Add Seller</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/seller/create">Add Seller</a></li>
           </ul>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#admin" aria-expanded="false" aria-controls="admin">
-          <i class="menu-icon mdi mdi-account-circle-outline"></i>
-          <span class="menu-title">Admin</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="admin">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/user">Manage Admin</a></li>
-          </ul>
-        </div>
-        <div class="collapse" id="admin">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/user/create">Add Admin</a></li>
-          </ul>
-        </div>
-      </li>
+      
       <li class="nav-item nav-category">Product</li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('/admin/category*') ? 'active' : '' }}" href="/admin/category">
+        <a class="nav-link" href="/admin/category">
           <i class="menu-icon mdi mdi-layers-outline"></i>
           <span class="menu-title">Category</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/merk">
+          <i class="menu-icon mdi mdi-clippy"></i>
+          <span class="menu-title">Merk</span>
         </a>
       </li>
       {{-- <li class="nav-item">
