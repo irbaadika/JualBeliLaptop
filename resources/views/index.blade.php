@@ -183,15 +183,15 @@
     <p
       class="font-size lineheight fs-500 text-white fs-poppins bold-900 uppercase"
     >
-      fine <span class="smile">smile</span>
+      BIG <span class="smile">SALE</span>
     </p>
     <p class="text-white fs-poppins fs-50">15 Nov To & Dec</p>
   </div>
   <div class="feature-info">
-    <h2 class="fs-200 text-white fs-poppins bold-500">Beats Solo Air</h2>
-    <p class="fs-poppins fs-300 bold-800 text-white">Summer Sale</p>
+    <h2 class="fs-200 text-white fs-poppins bold-500">ASUS</h2>
+    <p class="fs-poppins fs-300 bold-800 text-white">TUF GAMING</p>
     <p class="fs-montserrat text-white fs-50">
-      Company that’s grown from 270 to 480 employees in the last 12 months.
+      New Gaming Laptops, you can get Intel Core i5 with 8 GB RAM and 1 TB SSD
     </p>
     <button class="prdduct-btn large-btn text-red bg-white fs-poppins">
       Shop
@@ -210,9 +210,9 @@
 <!-- ===========================Heading======================== -->
 <section class="best-Seller">
   <div class="product grid">
-    <img src="image/p-2.jpg" alt="" />
-    <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
-    <p class="fs-poppins bold-500">$995.00</p>
+    <img src="image/p-2.png" alt="" />
+    <p class="fs-poppins bold-500">Lenovo Legion 5</p>
+    <p class="fs-poppins bold-500">Rp. 25.000.000</p>
 
     <!-- ---------------------------- -->
     <div class="product-details grid bg-red">
@@ -222,9 +222,9 @@
     <!-- ===================================== -->
   </div>
   <div class="product grid">
-    <img src="image/p-3.jpg" alt="" />
-    <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
-    <p class="fs-poppins bold-500">$995.00</p>
+    <img src="image/p-3.png" alt="" />
+    <p class="fs-poppins bold-500">Asus ZenBook 2 Pro</p>
+    <p class="fs-poppins bold-500">Rp. 30.000.000</p>
 
     <!-- ---------------------------- -->
     <div class="product-details grid bg-red">
@@ -234,9 +234,9 @@
     <!-- ===================================== -->
   </div>
   <div class="product grid">
-    <img src="image/p-4.jpg" alt="" />
-    <p class="fs-poppins bold-500">Game Console Controller Cable</p>
-    <p class="fs-poppins bold-500">$995.00</p>
+    <img src="image/p-4.png" alt="" />
+    <p class="fs-poppins bold-500">ROG Strix</p>
+    <p class="fs-poppins bold-500">Rp. 60.000.000</p>
 
     <!-- ---------------------------- -->
     <div class="product-details grid bg-red">

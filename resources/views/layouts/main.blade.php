@@ -25,6 +25,7 @@
     <script src="js/index.js" defer></script>
     <!-- custon style Sheet & JavaScript -->
     <title>Ecommerce Website</title>
+    <link rel="shortcut icon" href="images/favicon.png" />
   </head>
   <body class="home">
     @include('layouts.header')

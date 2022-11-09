@@ -32,11 +32,7 @@
             >Contact Us</a
           >
         </li>
-        <li>
-          <a class="fs-100 fs-montserrat bold-500" href="/cart"
-            >Cart page</a
-          >
-        </li>
+        
       </ul>
     </nav>
   </div>
@@ -44,12 +40,18 @@
   <div class="header-login flex">
     <nav>
       <ul id="primary-navigation" data-visible="false" class="primary-navigation flex" >
+        
+        <li>
+          <img src="image/search.png" alt="search">
+        </li>
+        <li>
+          <a class="fs-100 fs-montserrat bold-500" href="/cart"
+            ><img src="image/cart.png" alt="cart"></a
+          >
+        </li>
         <li>
           <a class="fs-100 fs-montserrat bold-500" href="/login"
             >Login</a>
-        </li>
-        <li>
-          <i class="uil uil-search"></i>
         </li>
         {{-- <li>
           <i id="cart-box" aria-controls="cart-icon" class="uil uil-shopping-bag" ></i>
