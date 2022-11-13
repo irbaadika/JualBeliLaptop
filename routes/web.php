@@ -40,21 +40,25 @@ Route::get('/product', function () {
     return view('product');
 });
 
+Route::get('/seller', function () {
+    return view('registerSeller');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-});
+})->middleware('checkRole:admin');
 
 Route::get('/login', [LoginController::class, 'index']);
 
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
 
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/verify', [LoginController::class, 'logout']);
+Route::get('/verify', [LoginController::class, 'verify']);
 
-Route::get('/block', [LoginController::class, 'logout']);
+Route::get('/block', [LoginController::class, 'block']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
 Route::post('/register', [RegisterController::class, 'store']);
 
