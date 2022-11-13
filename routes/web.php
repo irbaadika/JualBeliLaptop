@@ -50,6 +50,10 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LoginController::class, 'logout']);
 
+Route::get('/verify', [LoginController::class, 'logout']);
+
+Route::get('/block', [LoginController::class, 'logout']);
+
 Route::get('/register', [RegisterController::class, 'index']);
 
 Route::post('/register', [RegisterController::class, 'store']);
