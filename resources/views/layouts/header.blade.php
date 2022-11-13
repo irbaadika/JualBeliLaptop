@@ -13,24 +13,20 @@
     <nav>
       <ul id="primary-navigation" data-visible="false" class="primary-navigation flex" >
         <li>
-          <a class="active fs-100 fs-montserrat bold-500" href="/"
-            >Home</a
-          >
+          <a class="{{ Request::is('/') ? 'active' : '' }}  fs-100 fs-montserrat bold-500" href="/"
+            >Home</a>
         </li>
         <li>
-          <a class="fs-100 fs-montserrat bold-500" href="/shop"
-            >Shop</a
-          >
+          <a class="{{ Request::is('shop') ? 'active' : '' }}  fs-100 fs-montserrat bold-500" href="/shop"
+            >Shop</a>
         </li>
         <li>
-          <a class="fs-100 fs-montserrat bold-500" href="/about"
-            >About Us</a
-          >
+          <a class="{{ Request::is('about') ? 'active' : '' }} fs-100 fs-montserrat bold-500" href="/about"
+            >About Us</a>
         </li>
         <li>
-          <a class="fs-100 fs-montserrat bold-500" href="/contactus"
-            >Contact Us</a
-          >
+          <a class="{{ Request::is('contactus') ? 'active' : '' }} fs-100 fs-montserrat bold-500" href="/contactus"
+            >Contact Us</a>
         </li>
         
       </ul>
@@ -44,15 +40,47 @@
         <li>
           <img src="image/search.png" alt="search">
         </li>
+        @auth
+        @if (auth()->user()->role == 'buyer')
         <li>
           <a class="fs-100 fs-montserrat bold-500" href="/cart"
-            ><img src="image/cart.png" alt="cart"></a
-          >
+            ><img src="image/cart.png" alt="cart"></a>
         </li>
+        @endif
+        <li class="nav-item dropdown fs-100 fs-montserrat bold-500">            
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Be a Seller
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">  
+            <li><a class="dropdown-item" href=/seller><i class="bi bi-clipboard-minus me-2"></i>Register Now !!</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown fs-100 fs-montserrat bold-500">            
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome back , {{ auth()->user()->username }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            @if(auth()->user()->role == 'admin')
+            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-clipboard-minus me-2"></i> My Dashboard</a></li>
+            @else
+            <li><a class="dropdown-item" href="/#"><i class="bi bi-menu-button-wide me-2"></i> My Transaction</a></li>
+            @endif
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <form action="/logout" action="get">
+                    @csrf
+                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-left me-2"></i> Logout</button>
+                </form>
+            </li>
+          </ul>
+        </li>
+        @else
         <li>
           <a class="fs-100 fs-montserrat bold-500" href="/login"
             >Login</a>
         </li>
+        @endauth
         {{-- <li>
           <i id="cart-box" aria-controls="cart-icon" class="uil uil-shopping-bag" ></i>
           <!-- =================1111111111================== -->

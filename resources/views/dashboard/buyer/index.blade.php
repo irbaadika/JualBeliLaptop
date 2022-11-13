@@ -17,7 +17,7 @@
       <thead>
         <tr>
           <th scope="col">Name</th>
-          <th scope="col">User</th>
+          <th scope="col">Username</th>
           <th scope="col">Email</th>
           <th scope="col">Phone</th>
           <th scope="col">Verify</th>

@@ -41,11 +41,6 @@
             <li class="nav-item"> <a class="nav-link" href="/admin/buyer">Manage Buyer</a></li>
           </ul>
         </div>
-        <div class="collapse" id="buyer">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/buyer/create">Add Buyer</a></li>
-          </ul>
-        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#seller" aria-expanded="false" aria-controls="seller">
@@ -56,11 +51,6 @@
         <div class="collapse" id="seller">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/admin/seller">Manage Seller</a></li>
-          </ul>
-        </div>
-        <div class="collapse" id="seller">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/seller/create">Add Seller</a></li>
           </ul>
         </div>
       </li>
