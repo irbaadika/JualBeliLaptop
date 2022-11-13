@@ -61,7 +61,7 @@ class LoginController extends Controller
             $user->save();
         }
 
-        return redirect('/admin/member');
+        return redirect('/admin/buyer');
     }
 
     public function block(Request $request)
@@ -73,6 +73,6 @@ class LoginController extends Controller
             $user->save();
         }
 
-        return redirect('/admin/member');
+        return redirect('/admin/buyer');
     }
 }
