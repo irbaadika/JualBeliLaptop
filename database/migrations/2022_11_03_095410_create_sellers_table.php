@@ -22,11 +22,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('npwp');
             $table->string('alamat');
-            $table->string('password');
             $table->string('verify')->default(0);
             $table->string('user_id');
             $table->string('photo')->nullable();
-            $table->string('doc');
+            $table->string('doc')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

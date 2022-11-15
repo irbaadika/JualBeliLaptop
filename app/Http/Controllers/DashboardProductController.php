@@ -8,7 +8,7 @@ use App\Models\Category;
 use App\Models\Merk;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 class DashboardProductController extends Controller
 {
@@ -34,7 +34,7 @@ class DashboardProductController extends Controller
          $category = Category::all();
          $merk = Merk::all();
          $user = Auth::user();
-         $seller = Auth::user()->seller();
+         $seller = Auth::user()->seller;
          
         return view('dashboard.product.create', [
             'category' => $category,

@@ -18,35 +18,89 @@
     <div class="contact-info">
       <div>
         <h1 class="fs-poppins text-red fs-200">Be a Seller</h1>
-        <h3 class="fs-poppins text-black fs-400">Get In ouch</h3>
+        <h3 class="fs-poppins text-black fs-400">Registration</h3>
         <p class="fs-montserrat fs-100">
-          When, while lovely valley teems with vapour around meand meridian
-          the upper impenetrable .
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda fugiat qui, ab porro tempore dolores quo laudantium ipsam quam nostrum perspiciatis aliquid sunt reiciendis sapiente placeat rerum minus ex repellendus.
         </p>
       </div>
-      <form action="#" class="contact-form grid">
+      <form method="POST" action="/seller" class="contact-form grid" enctype="multipart/form-data">
+        @csrf
         <div class="grid">
-          <input
-            class="bg-gray text-black fs-poppins"
-            type="text"
-            placeholder="Your E-mail"
-          />
+          <input class="form-control bg-gray text-black fs-poppins @error('name') is-invalid @enderror" type="text" placeholder="Nama Pemilik email" id="name" name="name" value="{{ old('name') }}"/>
+          @error('name')
+          <div class="invalid-feedback">
+          {{ $message }}
+          </div>
+          @enderror
         </div>
+        
         <div class="grid">
-          <input
-            class="bg-gray text-black fs-poppins"
-            type="text"
-            placeholder="Phone number"
-          />
+          <input class="form-control bg-gray text-black fs-poppins @error('toko') is-invalid @enderror" type="text" placeholder="Nama Toko" id="toko" name="toko" value="{{ old('toko') }}"/>
+          @error('toko')
+          <div class="invalid-feedback">
+          {{ $message }}
+          </div>
+          @enderror
         </div>
-        <div>
+
+        <div class="grid">
+          <input class="form-control bg-gray text-black fs-poppins @error('email') is-invalid @enderror" type="text" placeholder="Email Toko" id="email" name="email" value="{{ old('email') }}"/>
+          @error('email')
+          <div class="invalid-feedback">
+          {{ $message }}
+          </div>
+          @enderror
+        </div>
+        
+        <div class="grid">
+          <input class="form-control bg-gray text-black fs-poppins @error('phone') is-invalid @enderror" type="text" placeholder="No Telepon" id="phone" name="phone" value="{{ old('phone') }}"/>
+          @error('phone')
+          <div class="invalid-feedback">
+          {{ $message }}
+          </div>
+          @enderror
+        </div>
+
+        <div class="grid">
+          <input class="form-control bg-gray text-black fs-poppins @error('npwp') is-invalid @enderror" type="text" placeholder="NPWP" id="npwp" name="npwp" value="{{ old('npwp') }}"/>
+          @error('npwp')
+          <div class="invalid-feedback">
+          {{ $message }}
+          </div>
+          @enderror
+        </div>
+
+        <div class="grid">
+          <input class="form-control bg-gray text-black fs-poppins @error('alamat') is-invalid @enderror" type="text" placeholder="Alamat Toko" id="alamat" name="alamat" value="{{ old('alamat') }}"/>
+          @error('alamat')
+          <div class="invalid-feedback">
+          {{ $message }}
+          </div>
+          @enderror
+        </div>
+
+        <div class="grid">
+          <label for="doc" class="form-label fs-poppins fs-200 ms-4 mt-4">Surat Pernyataan</label>
+          <p class="fs-poppins ms-4 mb-2">Silahkan mengisi surat pernyataan sesuai template yang diberikan</p>
+          <div> 
+              <a href="#" class="badge bg-danger mb-4 ms-4"><span class="menu-icon mdi mdi-file-pdf mdi-24px"></span></a>
+              <p class="d-inline align-self-center">Template Surat Pernyataan</p>
+          </div>
+          <input class="form-control bg-gray text-black fs-poppins @error('doc') is-invalid @enderror" type="file" id="doc" name="doc">
+          @error('doc')
+          <div class="invalid-feedback">
+          {{ $message }}
+          </div>
+          @enderror
+        </div>
+        {{-- <div>
           <textarea
             class="bg-gray text-black fs-poppins"
             rows="10"
             placeholder="Your Message Here"
           >
           </textarea>
-        </div>
+        </div> --}}
 
         <div class="contact-btn">
           <button class="large-btn bg-red text-white fs-poppins fs-50">
@@ -57,7 +111,7 @@
     </div>
 
     <!-- ================map===================== -->
-    <div>
+    {{-- <div>
       <div class="map">
         <h4 class="fs-poppins fs-200 text-red">
           Google Maps API Key Is Messing
@@ -67,12 +121,12 @@
           api key and insert it in customizer "Google Maps API Key" field.
         </p>
       </div>
-    </div>
+    </div> --}}
   </section>
 
   <!-- ===========Support Section==================== -->
 
-  <section class="suport-container grid">
+  {{-- <section class="suport-container grid">
     <div class="support-info grid">
       <div class="suport-img grid">
         <img src="/image/sup-1.svg" alt="" />
@@ -109,7 +163,7 @@
         <p class="fs-poppins fs-100">Street Grapevine Nashville, Tx 76051</p>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- ===================Contact Us======================== -->
 

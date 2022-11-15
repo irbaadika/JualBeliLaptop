@@ -30,7 +30,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if (Auth::user()->verify === 0) {
+            if (Auth::user()->verify == 0) {
                 Auth::logout();
                 return back()->with('loginError', 'Silahkan hubungi administrator untuk aktivasi akun anda agar bisa masuk');
             }
