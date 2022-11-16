@@ -11,10 +11,7 @@ class Seller extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name',
         'toko',
-        'email',
-        'phone',
         'npwp',
         'alamat',
         'password',

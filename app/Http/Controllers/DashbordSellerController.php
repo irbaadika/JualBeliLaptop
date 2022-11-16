@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Merk;
 
-class DashboardMerkController extends Controller
+class DashbordSellerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class DashboardMerkController extends Controller
      */
     public function index()
     {
-        $merk = Merk::paginate(10);
-        return view('dashboard.merk.index', compact('merk'));
-
+        $user = User::with('seller')->paginate(5);
+        return view('dashboard.seller.index', compact('user'));
     }
 
     /**
@@ -26,7 +25,7 @@ class DashboardMerkController extends Controller
      */
     public function create()
     {
-        return view('dashboard.merk.create');
+        //
     }
 
     /**
@@ -37,14 +36,7 @@ class DashboardMerkController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|unique:merks'
-        ]);
-
-        Merk::create($validatedData);
-
-        return redirect('/admin/merk')->with('success', 'Kategori baru telah ditambahkan');
-
+        //
     }
 
     /**
@@ -78,9 +70,7 @@ class DashboardMerkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $merk = Merk::where('id', $id)->first();
-        return view('dashboard.merk.edit', compact('merk'));
-
+        //
     }
 
     /**
@@ -91,8 +81,6 @@ class DashboardMerkController extends Controller
      */
     public function destroy($id)
     {
-        Merk::where('id', $id)->delete();
-        return redirect('/admin/merk')->with('success', 'Kategori telah dihapus');
-
+        //
     }
 }
