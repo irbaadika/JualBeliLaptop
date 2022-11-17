@@ -21,10 +21,12 @@ class CheckRole
         if (Auth::check() && Auth::user()->role == 'admin') {
             return $next($request);
         }
-        elseif(Auth::check() && Auth::user()->role == 'seller'){
-            return redirect('/cart');
+        
+        
+        if (Auth::check() && Auth::user()->role == 'seller') {
+            return $next($request);
         }
-        else
+        
         return redirect('/');
     }
 }

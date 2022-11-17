@@ -51,6 +51,10 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('checkRole:admin');
 
+Route::get('/dashboardSeller', function () {
+    return view('dashboardSeller.index');
+})->middleware('checkRole:seller');
+
 Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');

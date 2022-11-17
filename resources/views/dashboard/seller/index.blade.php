@@ -64,6 +64,7 @@
             <form action="/admin/seller/{{ $u->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
+              <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ $u->id }}">
               <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')" ><span class="menu-icon mdi mdi-backspace"></button>
             </form>
           </td>
