@@ -112,12 +112,12 @@ class DahsboardBuyerController extends Controller
      */
     public function destroy($id)
     {
-         $user = User::where('id', $id)->first();
+        $user = User::where('id', $id)->first();
         if($user->photo){
             Storage::delete($user->photo);
         }
         $user->delete();
-        return redirect('/adminbuyer')->with('success', 'Akun telah dihapus');
+        return redirect('/admin/buyer')->with('success', 'Akun telah dihapus');
 
     }
 }
