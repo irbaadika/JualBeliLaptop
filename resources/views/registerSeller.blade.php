@@ -25,36 +25,10 @@
       </div>
       <form method="POST" action="/seller" class="contact-form grid" enctype="multipart/form-data">
         @csrf
-        <div class="grid">
-          <input class="form-control bg-gray text-black fs-poppins @error('name') is-invalid @enderror" type="text" placeholder="Nama Pemilik email" id="name" name="name" value="{{ old('name') }}"/>
-          @error('name')
-          <div class="invalid-feedback">
-          {{ $message }}
-          </div>
-          @enderror
-        </div>
-        
+
         <div class="grid">
           <input class="form-control bg-gray text-black fs-poppins @error('toko') is-invalid @enderror" type="text" placeholder="Nama Toko" id="toko" name="toko" value="{{ old('toko') }}"/>
           @error('toko')
-          <div class="invalid-feedback">
-          {{ $message }}
-          </div>
-          @enderror
-        </div>
-
-        <div class="grid">
-          <input class="form-control bg-gray text-black fs-poppins @error('email') is-invalid @enderror" type="text" placeholder="Email Toko" id="email" name="email" value="{{ old('email') }}"/>
-          @error('email')
-          <div class="invalid-feedback">
-          {{ $message }}
-          </div>
-          @enderror
-        </div>
-        
-        <div class="grid">
-          <input class="form-control bg-gray text-black fs-poppins @error('phone') is-invalid @enderror" type="text" placeholder="No Telepon" id="phone" name="phone" value="{{ old('phone') }}"/>
-          @error('phone')
           <div class="invalid-feedback">
           {{ $message }}
           </div>

@@ -17,10 +17,7 @@ class SellerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
             'toko' => 'required',
-            'email' => 'required',
-            'phone' => 'required|max:12|min:11',
             'alamat' => 'required',
             'npwp' => 'required|digits:16',
             'doc' => 'required|mimes:pdf'
@@ -29,10 +26,7 @@ class SellerController extends Controller
 
         $seller = new Seller();
         $seller->user_id = $request->user()->id;
-        $seller->name = $request->get('name');
         $seller->toko = $request->get('toko');
-        $seller->email = $request->get('email');
-        $seller->phone = $request->get('phone');
         $seller->alamat = $request->get('alamat');
         $seller->npwp = $request->get('npwp');
 

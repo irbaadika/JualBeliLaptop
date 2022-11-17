@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Seller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashbordSellerController extends Controller
 {
@@ -47,7 +49,8 @@ class DashbordSellerController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::with('seller')->where('id', $id)->first();
+        return view('dashboard.seller.show', ['user' => $user]);
     }
 
     /**
@@ -58,7 +61,8 @@ class DashbordSellerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::with('seller')->where('id', $id)->first();
+        return view('dashboard.seller.edit', ['user' => $user]);
     }
 
     /**
@@ -70,7 +74,38 @@ class DashbordSellerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userId = $request->get('user_id');
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required|numeric',
+            'toko' => 'required',
+            'alamat' => 'required',
+            'npwp' => 'required',
+            'photo' => 'image|file|max:2048'
+        ]);
+
+        $user = User::where('id', $userId)->first();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->phone = $request->get('phone');
+
+        $seller = Seller::where('id', $id)->first();
+        $seller->toko = $request->get('toko');
+        $seller->alamat = $request->get('alamat');
+        $seller->npwp = $request->get('npwp');
+
+        if($request->file('photo')){
+            if($request->oldPhoto){
+                Storage::delete($request->oldPhoto);
+            }
+            $seller->photo = $request->file('photo')->store('user-img');
+        }
+
+        $user->save();
+        $seller->save();
+
+        return redirect('/admin/seller')->with('success', 'Seller berhasil diedit');
     }
 
     /**
@@ -79,8 +114,23 @@ class DashbordSellerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $userId = $request->get('user_id');
+        $seller = Seller::where('id', $id)->first();
+        if($seller->photo){
+            Storage::delete($seller->photo);
+        }
+        $seller->delete();
+
+        $user = User::where('id', $userId)->first();
+        if($user){
+            $user->role = 'buyer';
+
+            $user->save();
+        }
+
+        return redirect('/admin/seller')->with('success', 'Akun telah dihapus');
+
     }
 }
