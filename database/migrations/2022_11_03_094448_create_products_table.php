@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('seller_id');
             $table->string('deskripsi');
             $table->string('harga');
+            $table->string('stok');
             $table->string('photo')->nullable();
             $table->timestamps();
         });
