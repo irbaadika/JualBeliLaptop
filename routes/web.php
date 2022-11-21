@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SellerMerkController;
 use App\Http\Controllers\DashboardMerkController;
+use App\Http\Controllers\SellerProductController;
 use App\Http\Controllers\DahsboardBuyerController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashbordSellerController;
+use App\Http\Controllers\SellerCategoryController;
 use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\DashboardCategoryController;
 
@@ -82,5 +85,11 @@ Route::resource('/admin/buyer', DahsboardBuyerController::class);
 Route::resource('/admin/seller', DashbordSellerController::class);
 
 Route::post('/seller', [SellerController::class, 'store']);
+
+Route::resource('/sellerCategory', SellerCategoryController::class);
+
+Route::resource('/sellerMerk', SellerMerkController::class);
+
+Route::resource('/sellerProduct', SellerProductController::class);
 
 
