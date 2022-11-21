@@ -19,7 +19,7 @@ class LoginController extends Controller
         ]);
     }
 
-
+    protected $redirectTo;
     public function authenticate(Request $request)
     {
 
@@ -27,7 +27,7 @@ class LoginController extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
-
+        
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if (Auth::user()->verify == 0) {
@@ -35,7 +35,15 @@ class LoginController extends Controller
                 return back()->with('loginError', 'Silahkan hubungi administrator untuk aktivasi akun anda agar bisa masuk');
             }
 
-            return redirect()->intended('/dashboard');
+            // return redirect()->intended('/dashboard');
+
+            if(Auth::user()->role == "admin"){
+                return redirect()->intended('/dashboard');
+            }elseif(Auth::user()->role == "seller"){
+                return redirect()->intended('/dashboardSeller');
+            }else{
+                return redirect()->intended('/');
+            }
         }
 
         return back()->with('loginError', 'Silahkan coba lagi');
