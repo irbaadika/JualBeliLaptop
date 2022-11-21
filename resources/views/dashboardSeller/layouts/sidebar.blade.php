@@ -16,13 +16,13 @@
       
       <li class="nav-item nav-category">Product</li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/category">
+        <a class="nav-link" href="/sellerCategory">
           <i class="menu-icon mdi mdi-layers-outline"></i>
           <span class="menu-title">Category</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/merk">
+        <a class="nav-link" href="/sellerMerk">
           <i class="menu-icon mdi mdi-clippy"></i>
           <span class="menu-title">Merk</span>
         </a>
@@ -47,12 +47,12 @@
         </a>
         <div class="collapse" id="product">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/product">Manage Product</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/sellerProduct">Manage Product</a></li>
           </ul>
         </div>
         <div class="collapse" id="product">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/product/create">Add Product</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/sellerProduct/create">Add Product</a></li>
           </ul>
         </div>
       </li>
@@ -89,7 +89,7 @@
         </a>
         <div class="collapse" id="trans">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/transaksi">Manage Transaction</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/sellerTransaksi">Manage Transaction</a></li>
           </ul>
         </div>
       </li>
