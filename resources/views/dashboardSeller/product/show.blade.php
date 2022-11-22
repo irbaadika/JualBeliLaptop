@@ -20,7 +20,7 @@
                     <li class="list-group-item"><b>Kategori : </b>{{ $product->category->name}}</li>
                     <li class="list-group-item"><b>Deskripsi : </b>{{ $product->deskripsi }}</li>
                     <li class="list-group-item"><b>Stok : </b>{{ $product->stok }}</li>
-                    <li class="list-group-item"><b>Harga : </b>{{ $product->harga }}</li>
+                    <li class="list-group-item"><b>Harga : </b>{{ currency_IDR($product->harga) }}</li>
             </div>
             <a class="btn btn-success mt-3 mb-3" href="/sellerProduct">kembali</a>
         </div>

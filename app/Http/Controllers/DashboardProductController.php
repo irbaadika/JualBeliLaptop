@@ -98,7 +98,7 @@ class DashboardProductController extends Controller
         $product = Product::with('category', 'merk')->where('id', $id)->first();
         $category = Category::all();
         $merk = Merk::all();
-        return view('dashboard.product.edit', compact('product', 'category'));
+        return view('dashboard.product.edit', compact('product', 'category', 'merk'));
 
     }
 

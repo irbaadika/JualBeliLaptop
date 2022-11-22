@@ -11,7 +11,7 @@
         <div class="mb-3">
             <label for="merk_id" class="form-label">Merk</label>
            <select class="form-select" name="merk_id" >
-              @foreach ($category as $m)
+              @foreach ($merk as $m)
               @if (old('merk_id', $product->merk_id) == $m->id)
                 <option value="{{ $m->id }}" selected>{{ $m->name }}</option>
               @else

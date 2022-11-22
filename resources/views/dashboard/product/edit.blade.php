@@ -11,7 +11,7 @@
         <div class="mb-3">
             <label for="merk_id" class="form-label">Merk</label>
            <select class="form-select" name="merk_id" >
-              @foreach ($category as $m)
+              @foreach ($merk as $m)
               @if (old('merk_id', $product->merk_id) == $m->id)
                 <option value="{{ $m->id }}" selected>{{ $m->name }}</option>
               @else
@@ -49,6 +49,15 @@
               @endif
               @endforeach
            </select>
+          </div>
+          <div class="mb-3">
+            <label for="stok" class="form-label">Stok</label>
+            <input type="text" class="form-control @error('stok') is-invalid @enderror" id="stok" name="stok" value="{{ old('stok', $product->stok) }}">
+              @error('stok')
+              <div class="invalid-feedback">
+              {{ $message }}
+              </div>
+              @enderror
           </div>
           <div class="mb-3">
             <label for="harga" class="form-label">Harga</label>

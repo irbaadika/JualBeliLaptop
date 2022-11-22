@@ -68,6 +68,12 @@
           <span class="menu-title">Merk</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/product">
+          <i class="menu-icon mdi mdi-laptop"></i>
+          <span class="menu-title">Product</span>
+        </a>
+      </li>
       {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
           <i class="menu-icon mdi mdi-card-text-outline"></i>
@@ -80,7 +86,7 @@
           </ul>
         </div>
       </li> --}}
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#product" aria-expanded="false" aria-controls="charts">
           <i class="menu-icon mdi mdi-laptop"></i>
           <span class="menu-title">Product</span>
@@ -96,7 +102,7 @@
             <li class="nav-item"> <a class="nav-link" href="/admin/product/create">Add Product</a></li>
           </ul>
         </div>
-      </li>
+      </li> --}}
       {{-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
           <i class="menu-icon mdi mdi-table"></i>

@@ -40,7 +40,7 @@
                         <div class="card-body">
                         <h5 class="card-title">{{ $p->type }}</h5>
                         <p class="card-text">{{ $p->merk->name }}</p>
-                        <p class="card-text mb-4">{{ $p->harga }}</p>
+                        <p class="card-text mb-4">{{ currency_IDR($p->harga) }}</p>
                         {{-- <p class="card-text"><small class="text-muted">Last updated {{ $p->created_at->diffForHumans() }}</small></p> --}}
                         <a href="/sellerProduct/{{ $p->id }}" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a>
                         <a href="/sellerProduct/{{ $p->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a>
