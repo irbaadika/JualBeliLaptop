@@ -26,7 +26,7 @@
         </li>
         <li>
           <a class="{{ Request::is('contactus') ? 'active' : '' }} fs-100 fs-montserrat bold-500" href="/contactus"
-            >Contact Us</a>
+            >Services</a>
         </li>
         
       </ul>

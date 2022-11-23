@@ -53,12 +53,13 @@
           @enderror
         </div>
 
-        <div class="grid">
+        <div class="grid pernyataan">
           <label for="doc" class="form-label fs-poppins fs-200 ms-4 mt-4">Surat Pernyataan</label>
           <p class="fs-poppins ms-4 mb-2">Silahkan mengisi surat pernyataan sesuai template yang diberikan</p>
           <div> 
-              <a href="#" class="badge bg-danger mb-4 ms-4"><span class="menu-icon mdi mdi-file-pdf mdi-24px"></span></a>
-              <p class="d-inline align-self-center">Template Surat Pernyataan</p>
+            <a href="#" type="submit"><p class="my-3 ms-4"><i class="menu-icon mdi mdi-file-pdf mdi-36px icon-red me-2"></i>Template Surat Pernyataan</p></a>
+              {{-- <a href="#" class="badge bg-danger mb-4 ms-4"><i class="menu-icon mdi mdi-file-pdf mdi-24px"></i>Template Surat Pernyataan</a> --}}
+              {{-- <p class="d-inline align-self-center">Template Surat Pernyataan</p> --}}
           </div>
           <input class="form-control bg-gray text-black fs-poppins @error('doc') is-invalid @enderror" type="file" id="doc" name="doc">
           @error('doc')

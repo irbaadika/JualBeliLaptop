@@ -2328,3 +2328,28 @@ display: block;
       font-size: 1rem;
   }
 }
+
+i.icon-red{
+  color: red;
+  vertical-align: middle;
+}
+
+.pernyataan a{
+  color: rgb(33, 33, 33);   
+}
+
+.pernyataan a:link {
+  text-decoration: none;
+}
+
+.pernyataan a:visited {
+  text-decoration: none;
+}
+
+.pernyataan a:hover {
+  text-decoration: underline;
+}
+
+.pernyataan a:active {
+  text-decoration: none;
+}
