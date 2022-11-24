@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SellerMerkController;
 use App\Http\Controllers\DashboardMerkController;
 use App\Http\Controllers\SellerProductController;
@@ -50,13 +51,17 @@ Route::get('/seller', function () {
     return view('registerSeller');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware('checkRole:admin');
+// Route::get('/dashboard', function () {
+//     return view('dashboard.index');
+// })->middleware('checkRole:admin');
 
-Route::get('/dashboardSeller', function () {
-    return view('dashboardSeller.index');
-})->middleware('checkRole:seller');
+// Route::get('/dashboardSeller', function () {
+//     return view('dashboardSeller.index');
+// })->middleware('checkRole:seller');
+
+Route::get('/dashboard', [DashboardController::class, 'admin'])->middleware('checkRole:admin');
+
+Route::get('/dashboardSeller', [DashboardController::class, 'seller'])->middleware('checkRole:seller');
 
 Route::get('/login', [LoginController::class, 'index']);
 
