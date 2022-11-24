@@ -42,14 +42,14 @@
           <td>{{ $u->seller->npwp }}</td>
           <td>       
               @if( $u->seller->verify  == 0)
-              <form action="/verify" method="get" class="d-inline">
+              <form action="/verifySeller" method="get" class="d-inline">
               @csrf
               <input type="hidden" name="id" value="{{ $u->id }}">
               <button type="submit" class="badge bg-warning border-0" >Verify</button>
               </form>
 
               @else
-              <form action="/block" method="get" class="d-inline">
+              <form action="/blockSeller" method="get" class="d-inline">
               @csrf
               <input type="hidden" name="id" value="{{ $u->id }}">
               <button type="submit" class="badge bg-success border-0" >Verified</button>

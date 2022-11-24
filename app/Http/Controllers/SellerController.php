@@ -48,4 +48,28 @@ class SellerController extends Controller
         return redirect('/')->with('successAdd', 'Registrasi berhasil, silhakan menunggu verifikasi dari admin');
 
     }
+
+    public function verify(Request $request)
+    {
+
+        $seller = Seller::where('user_id', $request->id)->first();
+        $seller->verify = '1';
+
+        $seller->save();
+        
+
+        return redirect('/admin/seller');
+    }
+
+    public function block(Request $request)
+    {
+
+        $seller = Seller::where('user_id', $request->id)->first();
+        $seller->verify = '0';
+
+        $seller->save();
+        
+
+        return redirect('/admin/seller');
+    }
 }
