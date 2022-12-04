@@ -20,10 +20,10 @@
 
       <div>
         <div class="shop-title flex">
-          <div>
+          {{-- <div>
             <h2 class="fs-poppins fs-300">Shop</h2>
             <p class="fs-montserrat">Showing 1-9 of 10 results</p>
-          </div>
+          </div> --}}
           <div>
             <select name="text" id="" class="fs-poppins bg-black text-white">
               <option value="">Default Sorting</option>
@@ -40,6 +40,18 @@
         <!-- ==============Shop-product====================== -->
 
         <section class="shop-product grid">
+          @foreach ($product as $p)
+            <div class="product-list grid">
+              <img src="{{ asset('storage/' . $p->photo) }}" alt="" />
+              <p class="fs-montserrat bold-600">{{ $p->type }}</p>
+              <div class="shop-btn flex">
+                {{-- <button class="bg-red text-white fs-montserrat">
+                </button> --}}
+                <a href="/product/{{ $p->id }}" class="btn btn-danger bg-red text-white fs-montserrat">Add To Cart</a>
+                <p class="fs-montserrat bold-700">{{ currency_IDR($p->harga) }}</p>
+              </div>
+            </div>
+          @endforeach
           <div class="product-list grid">
             <img src="image/p-3.png" alt="" />
             <p class="fs-montserrat bold-600">Asus ZenBook 2 Pro</p>
@@ -48,16 +60,8 @@
               </button>
               <p class="fs-montserrat bold-700">$ 995.00</p>
             </div>
-
-            <!-- ===============Pop-Up========================== -->
-
-            <div class="pup-up">
-                <p class="fs-poppins">Sell</p>
-            </div>
-
-            <!-- ===============Pop-Up========================== -->
-
           </div>
+
           <div class="product-list grid">
             <img src="image/p-1.png" alt="" />
             <p class="fs-montserrat bold-600">Asus TUF Gaming</p>
@@ -88,33 +92,7 @@
               <p class="fs-montserrat bold-700">$ 995.00</p>
             </div>
           </div>
-          <div class="product-list grid">
-            <img src="image/p-3.png" alt="" />
-            <p class="fs-montserrat bold-600">Laptop</p>
-            <div class="shop-btn flex">
-              <button class="bg-red text-white fs-montserrat">
-                Add To Cart
-              </button>
-              <p class="fs-montserrat bold-700">$ 995.00</p>
-            </div>
-               <!-- ===============Pop-Up========================== -->
 
-               <div class="pup-up">
-                <p class="fs-poppins">Sell</p>
-            </div>
-
-            <!-- ===============Pop-Up========================== -->
-          </div>
-          <div class="product-list grid">
-            <img src="image/p-3.png" alt="" />
-            <p class="fs-montserrat bold-600">Laptop</p>
-            <div class="shop-btn flex">
-              <button class="bg-red text-white fs-montserrat">
-                Add To Cart
-              </button>
-              <p class="fs-montserrat bold-700">$ 995.00</p>
-            </div>
-          </div>
           <div class="product-list grid">
             <img src="image/p-3.png" alt="" />
             <p class="fs-montserrat bold-600">Laptop</p>

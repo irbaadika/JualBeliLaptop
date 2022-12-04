@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         @foreach ($user as $u)
-        @if($u->role == 'member' || $u->role == 'seller')
+        @if($u->role == 'buyer' || $u->role == 'seller')
           @continue
         @endif
         <tr>

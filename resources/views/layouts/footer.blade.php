@@ -2,26 +2,26 @@
     <!-- =============Brands================= -->
     <section class="brands grid">
       <div>
-        <img src="image/br-1.png" alt="" />
+        <img src="{{ asset('image/br-1.png') }}" alt="" />
       </div>
       <div>
-        <img src="image/br-2.png" alt="" />
+        <img src="{{ asset('image/br-2.png') }}" alt="" />
       </div>
       <div>
-        <img src="image/br-3.png" alt="" />
+        <img src="{{ asset('image/br-3.png') }}" alt="" />
       </div>
       <div>
-        <img src="image/br-4.png" alt="" />
+        <img src="{{ asset('image/br-4.png') }}" alt="" />
       </div>
       <div>
-        <img src="image/br-5.png" alt="" />
+        <img src="{{ asset('image/br-5.png') }}" alt="" />
       </div>
     </section>
 
     <!-- =============Footer Menu=================== -->
     <section class="footer grid">
       <div class="footer-logo grid">
-        <img src="image/logo.png" alt="" />
+        <img src="{{ asset('image/logo.png') }}" alt="" />
         <p class="fs-montserrat fs-200">
           There are many variations passages of Lorem Ipsum available, but the
           majority have

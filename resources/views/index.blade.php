@@ -202,7 +202,7 @@
 <!-- =============================Best Sellar================== -->
 
 <section class="best-product container">
-  <h2 class="letter-spacing bold-800 fs-poppins">Best Seller Products</h2>
+  <h2 class="letter-spacing bold-800 fs-poppins">New Upcomming</h2>
   <p class="fs-montserrat fs-100">
     speakerThere are many variations passages
   </p>
@@ -210,18 +210,21 @@
 
 <!-- ===========================Heading======================== -->
 <section class="best-Seller">
+  @foreach ($product as $p)
   <div class="product grid">
-    <img src="image/p-2.png" alt="" />
-    <p class="fs-poppins bold-500">Lenovo Legion 5</p>
-    <p class="fs-poppins bold-500">Rp. 25.000.000</p>
+    <img src="{{ asset('storage/' . $p->photo) }}" alt="" />
+    <p class="fs-poppins bold-500">{{ $p->type }}</p>
+    <p class="fs-poppins bold-500">{{ currency_IDR($p->harga) }}</p>
 
     <!-- ---------------------------- -->
     <div class="product-details grid bg-red">
-      <i class="text-white uil uil-shopping-cart-alt"></i>
-      <i class="text-white uil uil-heart-alt"></i>
+      <a href="/product/{{ $p->id }}"><i class="text-white uil uil-shopping-cart-alt"></i></a>
+      {{-- <i class="text-white uil uil-heart-alt"></i> --}}
     </div>
     <!-- ===================================== -->
   </div>
+  @endforeach
+  
   <div class="product grid">
     <img src="image/p-3.png" alt="" />
     <p class="fs-poppins bold-500">Asus ZenBook 2 Pro</p>
@@ -246,66 +249,7 @@
     </div>
     <!-- ===================================== -->
   </div>
-  <div class="product grid">
-    <img src="image/p-5.jpg" alt="" />
-    <p class="fs-poppins bold-500">Rocky Mountain</p>
-    <p class="fs-poppins bold-500">$995.00</p>
-
-    <!-- ---------------------------- -->
-    <div class="product-details grid bg-red">
-      <i class="text-white uil uil-shopping-cart-alt"></i>
-      <i class="text-white uil uil-heart-alt"></i>
-    </div>
-    <!-- ===================================== -->
-  </div>
-  <div class="product grid">
-    <img src="image/p9.jpg" alt="" />
-    <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
-    <p class="fs-poppins bold-500">$995.00</p>
-
-    <!-- ---------------------------- -->
-    <div class="product-details grid bg-red">
-      <i class="text-white uil uil-shopping-cart-alt"></i>
-      <i class="text-white uil uil-heart-alt"></i>
-    </div>
-    <!-- ===================================== -->
-  </div>
-  <div class="product grid">
-    <img src="image/p-7.jpg" alt="" />
-    <p class="fs-poppins bold-500">Wireless Audio System Multiroom 360</p>
-    <p class="fs-poppins bold-500">$995.00</p>
-
-    <!-- ---------------------------- -->
-    <div class="product-details grid bg-red">
-      <i class="text-white uil uil-shopping-cart-alt"></i>
-      <i class="text-white uil uil-heart-alt"></i>
-    </div>
-    <!-- ===================================== -->
-  </div>
-  <div class="product grid">
-    <img src="image/p8.png" alt="" />
-    <p class="fs-poppins bold-500">Wireless Audio System Multiroom 360</p>
-    <p class="fs-poppins bold-500">$995.00</p>
-
-    <!-- ---------------------------- -->
-    <div class="product-details grid bg-red">
-      <i class="text-white uil uil-shopping-cart-alt"></i>
-      <i class="text-white uil uil-heart-alt"></i>
-    </div>
-    <!-- ===================================== -->
-  </div>
-  <div class="product grid">
-    <img src="image/p9.jpg" alt="" />
-    <p class="fs-poppins bold-500">Smartwatch 2.0 LTE Wifi</p>
-    <p class="fs-poppins bold-500">$995.00</p>
-
-    <!-- ---------------------------- -->
-    <div class="product-details grid bg-red">
-      <i class="text-white uil uil-shopping-cart-alt"></i>
-      <i class="text-white uil uil-heart-alt"></i>
-    </div>
-    <!-- ===================================== -->
-  </div>
+  
 </section>
 
 <!-- =========================================== -->

@@ -10,7 +10,7 @@
 <header class="primary-header container flex">
   <div class="header-inner-one flex">
     <div class="logo">
-      <img src="image/logo.png" alt="" />
+      <img src="{{ asset('image/logo.png') }}" alt="" />
     </div>
     <button
       class="mobile-close-btn"
@@ -47,7 +47,7 @@
       <ul id="primary-navigation" data-visible="false" class="primary-navigation flex" >
         
         <li>
-          <img src="image/search.png" alt="search">
+          <img src="{{ asset('image/search.png') }}" alt="search">
         </li>
         @auth
         @if (auth()->user()->role == 'buyer')

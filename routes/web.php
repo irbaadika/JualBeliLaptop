@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SellerMerkController;
@@ -27,13 +29,16 @@ use App\Http\Controllers\DashboardCategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/shop', function () {
-    return view('shop');
-});
+Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/shop', [ProductController::class, 'index']);
+Route::get('/product/{id}', [ProductController::class, 'show']);
+
+
+// Route::get('/shop', function () {
+//     return view('shop');
+// });
 
 Route::get('/cart', function () {
     return view('cart');

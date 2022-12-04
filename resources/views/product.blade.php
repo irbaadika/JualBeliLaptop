@@ -1,27 +1,31 @@
 @extends('layouts.main')
 @section('content')
     <!-- ==================Single Product-============================= -->
+    <form action="">
     <section class="single-product grid">
+      
       <div>
-        <img src="/image/product-img.jpg" alt="" />
+        <img src="{{ asset('storage/' . $product->photo) }}" alt="" />
       </div>
       <div class="product-info grid">
-        <h1 class="fs-poppins fs-400 blod-900">Beats</h1>
+        <h4 class="fs-poppins">{{ $product->merk->name }}</h4>
+        <h1 class="fs-poppins fs-400 blod-900">{{ $product->type }}</h1>
         <div class="star-icon flex">
           <div>
+            
+            {{-- <i class="uil text-red uil-star"></i>
             <i class="uil text-red uil-star"></i>
             <i class="uil text-red uil-star"></i>
             <i class="uil text-red uil-star"></i>
-            <i class="uil text-red uil-star"></i>
-            <i class="uil uil-star"></i>
+            <i class="uil uil-star"></i> --}}
           </div>
           <div>
-            <p class="fs-montserrat fs-100">(1 customer review)</p>
+            {{-- <p class="fs-montserrat fs-100">(1 customer review)</p> --}}
           </div>
         </div>
 
         <div class="price">
-          <p class="bold-700 fs-poppins fs-300">$ 995.00</p>
+          <p class="bold-700 fs-poppins fs-300">{{ currency_IDR($product->harga) }}</p>
         </div>
 
         <div>
@@ -34,22 +38,24 @@
           </p>
         </div>
 
+        <div>
+          <p class="fs-poppins">Sisa stok {{ $product->stok }} buah</p>
+        </div>
         <div class="product-add-cart flex">
           <input type="number" min="0" max="10" class="bg-gray fs-poppins" />
-          <button
-            class="product-btn large-btn bg-red text-white fs-poppins fs-50"
-          >
+          <button class="product-btn large-btn bg-red text-white fs-poppins fs-50" type="submit">
             Add to cart
           </button>
         </div>
 
         <div>
           <p class="fs-montserrat text-red">
-            <span class="text-black">Category: </span>Headphone
+            <span class="text-black">Category: </span>{{ $product->category->name }}
           </p>
         </div>
       </div>
     </section>
+  </form>
 
     <!-- ==================Single Product-============================= -->
 
@@ -124,18 +130,6 @@
             <p class="text-black fs-poppins fs-200">Add a review</p>
           </div>
 
-          <div class="give-reviews flex">
-            <div>
-              <p class="text-black fs-poppins fs-200 bold-700">Your rating *</p>
-            </div>
-            <div>
-              <i class="uil uil-star"></i>
-              <i class="uil uil-star"></i>
-              <i class="uil uil-star"></i>
-              <i class="uil uil-star"></i>
-              <i class="uil uil-star"></i>
-            </div>
-          </div>
           <div class="message grid">
             <p class="fs-montserrat">Your review</p>
             <textarea
@@ -146,125 +140,11 @@
           </div>
         </div>
         <div class="review-btn flex">
-          <button
-            id="add-connent"
-            class="large-btn bg-red text-white fs-poppins fs-50"
-          >
+          <button id="add-connent" class="large-btn bg-red text-white fs-poppins fs-50">
             Submit
           </button>
         </div>
       </article>
-    </section>
-
-    <!-- ==============Product Description====================== -->
-
-    <!-- ============Related Product Section===================== -->
-
-    <!-- =================Related Product Section ================================ -->
-    <section class="best-product container">
-      <h2 class="letter-spacing bold-800 fs-poppins">Related products</h2>
-    </section>
-
-    <!-- ============Related Product Section===================== -->
-
-    <!-- ===========================Heading======================== -->
-    <section class="best-Seller related-product">
-      <div class="product grid">
-        <img src="/image/p-2.png" alt="" />
-        <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
-      <div class="product grid">
-        <img src="/image/p-3.png" alt="" />
-        <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
-      <div class="product grid">
-        <img src="/image/p-4.png" alt="" />
-        <p class="fs-poppins bold-500">Game Console Controller Cable</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
-      <div class="product grid">
-        <img src="/image/p-5.jpg" alt="" />
-        <p class="fs-poppins bold-500">Rocky Mountain</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
-      <div class="product grid">
-        <img src="/image/p9.jpg" alt="" />
-        <p class="fs-poppins bold-500">White EliteBook Tablet 810</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
-      <div class="product grid">
-        <img src="/image/p-7.jpg" alt="" />
-        <p class="fs-poppins bold-500">Wireless Audio System Multiroom 360</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
-      <div class="product grid">
-        <img src="/image/p8.png" alt="" />
-        <p class="fs-poppins bold-500">Wireless Audio System Multiroom 360</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
-      <div class="product grid">
-        <img src="/image/p9.jpg" alt="" />
-        <p class="fs-poppins bold-500">Smartwatch 2.0 LTE Wifi</p>
-        <p class="fs-poppins bold-500">$995.00</p>
-
-        <!-- ---------------------------- -->
-        <div class="product-details grid bg-red">
-          <i class="text-white uil uil-shopping-cart-alt"></i>
-          <i class="text-white uil uil-heart-alt"></i>
-        </div>
-        <!-- ===================================== -->
-      </div>
     </section>
 
     @endsection
