@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
-            $table->string('seller_id');
+            // $table->string('seller_id');
             $table->string('product_id');
+            $table->string('jumlah');
             $table->string('harga');
             $table->timestamps();
         });

@@ -1,9 +1,25 @@
 @extends('layouts.main')
 @section('content')
     <!-- ==================Single Product-============================= -->
-    <form action="">
+
+    <form  method="post" action="/cart">
+      @csrf
+      @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {{-- <script>
+        $(document).ready(function(){
+          $(".modal-title").text("{{ session('success') }}");
+          $(".modal-body p").text("Silahkan hubungi administrator untuk aktivasi akun anda agar bisa masuk");
+          $("#myModalSuccess").modal('show');
+        });
+      </script> --}}
+      @endif
     <section class="single-product grid">
-      
+      <input type="hidden" class="form-control" id="product_id" name="product_id" value="{{ $product->id }}">
+      <input type="hidden" class="form-control" id="harga" name="harga" value="{{ $product->harga }}">
       <div>
         <img src="{{ asset('storage/' . $product->photo) }}" alt="" />
       </div>
@@ -42,7 +58,7 @@
           <p class="fs-poppins">Sisa stok {{ $product->stok }} buah</p>
         </div>
         <div class="product-add-cart flex">
-          <input type="number" min="0" max="10" class="bg-gray fs-poppins" />
+          <input name="jumlah" type="number" min="0" max="10" class="bg-gray fs-poppins"/>
           <button class="product-btn large-btn bg-red text-white fs-poppins fs-50" type="submit">
             Add to cart
           </button>
@@ -147,4 +163,18 @@
       </article>
     </section>
 
+    <div id="myModalSuccess" class="modal fade ">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content ">
+              <div class="modal-header bg-success">
+                  <h5 class="modal-title"></h5>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+          <p></p>
+          
+              </div>
+          </div>
+      </div>
+    </div>
     @endsection

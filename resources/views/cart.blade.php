@@ -14,54 +14,43 @@
     <!-- ===============================Cart Section=================== -->
 
     <section class="table">
+      @if ($keranjang->count())
       <table>
         <thead class="thead fs-poppins text-black bold-700 bg-very-light-gray">
           <tr>
-            <td></td>
-            <td></td>
+            <td>Image</td>
             <td>Product</td>
             <td>Price</td>
             <td>Quantity</td>
             <td>Subtotal</td>
+            <td>Action</td>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><i class="uil uil-times"></i></td>
-            <td><i class="uil uil-user-circle"></i></td>
-            <td>Beats</td>
-            <td>$995.00</td>
-            <td><input type="number" min="0" max="10" /></td>
-            <td>$4975.00</td>
-          </tr>
-          <tr>
-            <td><i class="uil uil-times"></i></td>
-            <td><i class="uil uil-user-circle"></i></td>
-            <td>Beats</td>
-            <td>$995.00</td>
-            <td><input type="number" min="0" max="10" /></td>
-            <td>$4975.00</td>
-          </tr>
-          <tr>
-            <td><i class="uil uil-times"></i></td>
-            <td><i class="uil uil-user-circle"></i></td>
-            <td>Beats</td>
-            <td>$995.00</td>
-            <td><input type="number" min="0" max="10" /></td>
-            <td>$4975.00</td>
-          </tr>
-        </tbody>
+          
+          @foreach ($keranjang as $k)
+            <tr>
+              <td>
+                <img src="image/p-4.png" alt="" style="height: 200px; ">
+              </td>
+              <td>{{ $k->product->type }}</td>
+              <td>{{ currency_IDR($k->product->harga) }}</td>
+              <td>{{ $k->jumlah }} pcs</td>
+              <td>{{ currency_IDR($k->harga) }}</td>
+              <td>
+                <form action="/cart/{{ $k->id }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="btn btn-danger border-0" onclick="return confirm('Apakah anda yakin?')" >Hapus</button>
+                </form>
+              </td>
+            </tr>
+          @endforeach
       </table>
-
-      <div class="copen-box flex">
-        <div>
-            <input class="copen-input fs-poppins text-black" type="text">
-            <button class="cupen-btn fs-poppins bold-700 text-black">Apply coupen</button>
-        </div>
-        <div>
-            <button class="cupen-btn fs-poppins bold-700 text-black">Update cart</button>
-        </div>
-    </div>
+      @else
+      <h3 class="fs-poppins text-black text-center">Belum ada produk di keranjang</h3>
+      @endif
+    </tbody>
       
     </section>
 
