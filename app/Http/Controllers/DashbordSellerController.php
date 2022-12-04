@@ -16,7 +16,7 @@ class DashbordSellerController extends Controller
      */
     public function index()
     {
-        $user = User::with('seller')->paginate(5);
+        $user = User::with('seller')->where('role','seller')->paginate(5);
         return view('dashboard.seller.index', compact('user'));
     }
 

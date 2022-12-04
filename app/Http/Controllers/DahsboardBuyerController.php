@@ -15,7 +15,7 @@ class DahsboardBuyerController extends Controller
      */
     public function index()
     {
-        $user = User::paginate(5);
+        $user = User::where('role','buyer')->paginate(5);
         return view('dashboard.buyer.index', compact('user'));
 
     }
