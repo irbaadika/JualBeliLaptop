@@ -5,6 +5,7 @@
   
   <div class="table-responsive col-lg-8 mx-5 mt-4">
     {{-- <a href="/dashboard/product/create" class="btn btn-primary mb-3">Tambah Buyer</a> --}}
+    @if ($user->count()) 
     <table class="table table-striped table-sm">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Data Buyer</h1>
@@ -26,13 +27,6 @@
       </thead>
       <tbody>
         @foreach ($user as $u)
-        @if($u->role == 'admin' || $u->role == 'seller')
-          @continue
-            @if ($u->count)
-            @else
-            <h3>Buyer Beluum tersedia</h3>
-            @endif
-        @endif
         <tr>
           <td>{{ $u->name }}</td>
           <td>{{ $u->username }}</td>
@@ -69,6 +63,10 @@
         @endforeach    
       </tbody>
     </table>
+    @else 
+    <hr class="hr hr-blurry w-100" />
+    <h3>Buyer belum tersedia</h3>
+    @endif
     <div class="d-flex justify-content-center">
       {{ $user->links() }}
     </div>

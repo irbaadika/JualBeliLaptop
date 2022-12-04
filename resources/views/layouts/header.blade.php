@@ -53,7 +53,7 @@
         @if (auth()->user()->role == 'buyer')
         <li>
           <a class="fs-100 fs-montserrat bold-500" href="/cart"
-            ><img src="image/cart.png" alt="cart"></a>
+            ><img src="{{ asset('image/cart.png') }}" alt="cart"></a>
         </li>
         <li class="nav-item dropdown fs-100 fs-montserrat bold-500">            
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

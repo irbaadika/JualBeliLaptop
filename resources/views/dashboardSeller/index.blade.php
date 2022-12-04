@@ -12,22 +12,13 @@
                 <div class="col-sm-12">
                   <div class="statistics-details d-flex align-items-center justify-content-between">
                     <div>
-                      <p class="statistics-title">Member</p>
-                      <h4 class="rate-percentage">5 Persons</h4>
-                      
-                    </div>
-                    <div>
-                      <p class="statistics-title">Admin</p>
-                      <h4 class="rate-percentage">6 Persons</h4>
-                      
-                    </div>
                     <div>
                       <p class="statistics-title">Category</p>
                       <h4 class="rate-percentage">7 Categories</h4>
                       
                     </div>
                     <div class="d-none d-md-block">
-                      <p class="statistics-title">Course</p>
+                      <p class="statistics-title">Product</p>
                       <h4 class="rate-percentage">1 Courses</h4>
                       
                     </div>

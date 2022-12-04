@@ -11,23 +11,28 @@
                 <div class="col-sm-12">
                   <div class="statistics-details d-flex align-items-center justify-content-between">
                     <div>
-                      <p class="statistics-title">Member</p>
-                      <h4 class="rate-percentage">5 Persons</h4>
+                      <p class="statistics-title">Admin</p>
+                      <h4 class="rate-percentage">{{ $admin->count() }} Persons</h4>
                       
                     </div>
                     <div>
-                      <p class="statistics-title">Admin</p>
-                      <h4 class="rate-percentage">6 Persons</h4>
+                      <p class="statistics-title">Buyer</p>
+                      <h4 class="rate-percentage">{{ $buyer->count() }} Persons</h4>
+                      
+                    </div>
+                    <div>
+                      <p class="statistics-title">Seller</p>
+                      <h4 class="rate-percentage">{{ $seller->count() }} Persons</h4>
                       
                     </div>
                     <div>
                       <p class="statistics-title">Category</p>
-                      <h4 class="rate-percentage">7 Categories</h4>
+                      <h4 class="rate-percentage">{{ $category->count() }} Categories</h4>
                       
                     </div>
                     <div class="d-none d-md-block">
-                      <p class="statistics-title">Course</p>
-                      <h4 class="rate-percentage">1 Courses</h4>
+                      <p class="statistics-title">Product</p>
+                      <h4 class="rate-percentage">{{ $product->count() }} Products</h4>
                       
                     </div>
                     <div class="d-none d-md-block">

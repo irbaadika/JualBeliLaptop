@@ -25,9 +25,6 @@
       </thead>
       <tbody>
         @foreach ($user as $u)
-        @if($u->role == 'buyer' || $u->role == 'seller')
-          @continue
-        @endif
         <tr>
           <td>{{ $u->name }}</td>
           <td>{{ $u->username }}</td>
