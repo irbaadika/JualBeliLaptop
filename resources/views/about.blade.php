@@ -18,7 +18,7 @@
            <img src="/image/about-us.png" alt="">
        </div>
        <div class="about-info">
-           <h3 class="fs-poppins fs-200 text-red">Welcome To Digital Ecommerce</h3>
+           <h3 class="fs-poppins fs-200 text-red">Welcome To Mr. Fox</h3>
            <h1 class="fs-poppins fs-500 text-black">Who We Are?</h1>
            <p class="fs-montserrat fs-100">When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray<br><br>
 

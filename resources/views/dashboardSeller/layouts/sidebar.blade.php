@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active" href="/dashboard">
+        <a class="nav-link active" href="/dashboardSeller">
           <i class="mdi mdi-grid-large menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>

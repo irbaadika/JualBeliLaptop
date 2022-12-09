@@ -75,7 +75,7 @@
             @elseif (auth()->user()->role == 'seller')
             <li><a class="dropdown-item" href="/dashboardSeller"><i class="bi bi-clipboard-minus me-2"></i> My Dashboard</a></li>
             @else
-            <li><a class="dropdown-item" href="/#"><i class="bi bi-person-circle me-2"></i> My Profile</a></li>
+            <li><a class="dropdown-item" href="/profile/{{ auth()->user()->id }}"><i class="bi bi-person-circle me-2"></i> My Profile</a></li>
             <li><a class="dropdown-item" href="/#"><i class="bi bi-menu-button-wide me-2"></i> My Transaction</a></li>
             @endif
             <li><hr class="dropdown-divider"></li>

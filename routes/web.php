@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KeranjangController;
@@ -43,8 +45,13 @@ Route::get('/about', function () {
     return view('about');
 });
 
+<<<<<<< HEAD
 Route::get('/toko', function () {
     return view('toko');
+=======
+Route::get('/profile', function () {
+    return view('profile');
+>>>>>>> af905b06a6e11df5df6e54d571c5ff8d68acc636
 });
 
 Route::get('/seller', function () {
@@ -101,4 +108,13 @@ Route::resource('/sellerMerk', SellerMerkController::class);
 
 Route::resource('/sellerProduct', SellerProductController::class);
 
+Route::get('/profile/{id}', [ProfileController::class, 'index']);
+
+// PAYMENT AWAL
+// Route::get('/payment', [PaymentController::class, 'payment']);
+// Route::post('/payment', [PaymentController::class, 'payment_post']);
+
+// PAYMENT CART
+Route::get('/cart', [KeranjangController::class, 'payment']);
+Route::post('/cart', [KeranjangController::class, 'payment_post']);
 
