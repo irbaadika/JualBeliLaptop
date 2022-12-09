@@ -45,13 +45,15 @@ Route::get('/about', function () {
     return view('about');
 });
 
-<<<<<<< HEAD
+
 Route::get('/toko', function () {
     return view('toko');
-=======
+});
+    
+
 Route::get('/profile', function () {
     return view('profile');
->>>>>>> af905b06a6e11df5df6e54d571c5ff8d68acc636
+
 });
 
 Route::get('/seller', function () {
@@ -117,4 +119,3 @@ Route::get('/profile/{id}', [ProfileController::class, 'index']);
 // PAYMENT CART
 Route::get('/cart', [KeranjangController::class, 'payment']);
 Route::post('/cart', [KeranjangController::class, 'payment_post']);
-
