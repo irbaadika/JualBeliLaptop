@@ -43,6 +43,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/toko', function () {
+    return view('toko');
+});
 
 Route::get('/seller', function () {
     return view('registerSeller');
