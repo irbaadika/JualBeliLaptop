@@ -16,7 +16,12 @@ return new class extends Migration
         Schema::create('alamats', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
-            $table->string('alamat')->nullable();
+            $table->string('jalan')->nullable();
+            $table->string('kelurahan')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kota')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kodePos')->nullable();
             $table->timestamps();
         });
     }

@@ -1,6 +1,5 @@
 @extends('dashboardSeller.layouts.main')
 @section('content')
-
 <div class="main-panel">
   <div class="content-wrapper">
     <div class="row">
@@ -12,14 +11,18 @@
                 <div class="col-sm-12">
                   <div class="statistics-details d-flex align-items-center justify-content-between">
                     <div>
-                    <div>
                       <p class="statistics-title">Category</p>
-                      <h4 class="rate-percentage">7 Categories</h4>
+                      <h4 class="rate-percentage">{{ $category->count() }} Categories</h4>
                       
                     </div>
                     <div class="d-none d-md-block">
                       <p class="statistics-title">Product</p>
-                      <h4 class="rate-percentage">1 Courses</h4>
+                      <h4 class="rate-percentage">{{ $product->count() }} Products</h4>
+                      
+                    </div>
+                    <div class="d-none d-md-block">
+                      <p class="statistics-title">Service</p>
+                      <h4 class="rate-percentage">{{ $service->count() }} Services</h4>
                       
                     </div>
                     <div class="d-none d-md-block">

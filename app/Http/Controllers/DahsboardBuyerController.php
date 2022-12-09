@@ -76,31 +76,48 @@ class DahsboardBuyerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'username' => 'required',
-            'email' => 'required',
-            'phone' => 'required|numeric',
-            'photo' => 'image|file|max:2048'
-        ]);
-
-        $user = User::where('id', $id)->first();
-        $user->name = $request->get('name');
-        $user->username = $request->get('username');
-        $user->email = $request->get('email');
-        $user->phone = $request->get('phone');
-
-
         if($request->file('photo')){
-            if($request->oldPhoto){
-                Storage::delete($request->oldPhoto);
+            $request->validate([
+                'photo' => 'image|file|max:2048'
+            ]);
+    
+            $user = User::where('id', $id)->first();
+    
+            if($request->file('photo')){
+                if($request->oldPhoto){
+                    Storage::delete($request->oldPhoto);
+                }
+                $user->photo = $request->file('photo')->store('user-img');
             }
-            $user->photo = $request->file('photo')->store('user-img');
+            
+            $user->save();
+        }elseif($request->get('name')){
+            $user = User::where('id', $id)->first();
+            $user->name = $request->get('name');
+            $user->save();
+        }elseif($request->get('username')){
+            $user = User::where('id', $id)->first();
+            $user->username = $request->get('username');
+            $user->save();
+        }elseif($request->get('email')){
+            $user = User::where('id', $id)->first();
+            $user->email = $request->get('email');
+            $user->save();
+        }elseif($request->get('alamat_id')){
+            $user = User::where('id', $id)->first();
+            $user->alamat_id = $request->get('alamat_id');
+            $user->save();
+        }elseif($request->get('phone')){
+            $request->validate([
+                'phone' => 'nullable|numeric',
+            ]);
+            $user = User::where('id', $id)->first();
+            $user->phone = $request->get('phone');
+            $user->save();
         }
-        
-        $user->save();
 
-        return redirect('/admin/buyer')->with('success', 'Buyer berhasil diedit');
+
+        return redirect('/profile' . '/' . $id )->with('success', 'Buyer berhasil diedit');
 
     }
 

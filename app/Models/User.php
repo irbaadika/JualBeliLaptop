@@ -22,6 +22,7 @@ class User extends Authenticatable
         'username',
         'phone',
         'email',
+        'alamat_id',
         'password',
         'role',
         'verify',
@@ -52,7 +53,7 @@ class User extends Authenticatable
     }
     public function alamat()
     {
-        return $this->hasMany(Alamat::class);
+        return $this->belongsTo(Alamat::class);
     }
     public function keranjang()
     {

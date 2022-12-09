@@ -55,7 +55,7 @@
         </div>
 
         <div>
-          <p class="fs-poppins">Sisa stok {{ $product->stok }} buah</p>
+          <p class="fs-montserrat">Sisa stok {{ $product->stok }} buah</p>
         </div>
         <div class="product-add-cart flex">
           <input name="jumlah" type="number" min="0" max="10" class="bg-gray fs-poppins"/>
@@ -68,6 +68,11 @@
           <p class="fs-montserrat text-red">
             <span class="text-black">Category: </span>{{ $product->category->name }}
           </p>
+        </div>
+
+        <div class="toko">
+          <img src="{{ asset('image/profile.png') }}" alt="logo"/>
+          <a href="/toko/{{ $product->seller_id }}"><p class="fs-montserrat">{{ $product->seller->toko }}</p></a>  
         </div>
       </div>
     </section>

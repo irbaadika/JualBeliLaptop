@@ -93,5 +93,12 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item nav-category">Services</li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sellerService">
+          <i class="menu-icon mdi mdi-wrench"></i>
+          <span class="menu-title">Service</span>
+        </a>
+      </li>
     </ul>
   </nav>

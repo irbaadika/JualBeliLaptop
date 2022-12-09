@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Merk;
 use App\Models\User;
+use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -35,7 +36,15 @@ class DashboardController extends Controller
             return redirect('/')->with('gagal', 'Silahkan hubungi admin untuk melakukan verifikasi');
         }
        elseif($request->user()->seller->verify == '1'){
-            return view('dashboardSeller.index');
+        $seller = Auth::user()->seller;
+        $category = Category::all();
+        $product = Product::where('seller_id', $seller->id);
+        $service = Service::where('seller_id', $seller->id);
+            return view('dashboardSeller.index',[
+                'category' => $category,
+                'product' => $product,
+                'service' => $service,
+            ]);
        }
     }
 

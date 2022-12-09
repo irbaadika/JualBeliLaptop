@@ -33,10 +33,6 @@
           <a class="{{ Request::is('about') ? 'active' : '' }} fs-100 fs-montserrat bold-500" href="/about"
             >About Us</a>
         </li>
-        <li>
-          <a class="{{ Request::is('contactus') ? 'active' : '' }} fs-100 fs-montserrat bold-500" href="/contactus"
-            >Services</a>
-        </li>
         
       </ul>
     </nav>

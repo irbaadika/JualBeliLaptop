@@ -12,7 +12,12 @@ class Alamat extends Model
 
     protected $fillable = [
         'user_id',
-        'alamat'
+        'jalan',
+        'kelurahan',
+        'kecamatan',
+        'kota',
+        'provinsi',
+        'kodePos'
     ];
 
     public function user()

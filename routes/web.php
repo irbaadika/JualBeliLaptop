@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TokoController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AlamatController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KeranjangController;
@@ -46,14 +50,8 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/toko', function () {
-    return view('toko');
-});
-    
-
-Route::get('/profile', function () {
-    return view('profile');
-
+Route::get('/report', function () {
+    return view('report');
 });
 
 Route::get('/seller', function () {
@@ -110,7 +108,21 @@ Route::resource('/sellerMerk', SellerMerkController::class);
 
 Route::resource('/sellerProduct', SellerProductController::class);
 
+Route::resource('/alamat', AlamatController::class);
+
 Route::get('/profile/{id}', [ProfileController::class, 'index']);
+
+Route::get('/toko/{id}', [TokoController::class, 'index']);
+
+Route::get('/service/{id}', [ServiceController::class, 'index']);
+Route::post('/service', [ServiceController::class, 'store']);
+Route::get('/sellerService', [ServiceController::class, 'indexSeller']);
+Route::get('/sellerService/{id}', [ServiceController::class, 'show']);
+
+Route::get('/report/{id}', [ReportController::class, 'index']);
+Route::post('/report', [ReportController::class, 'store']);
+
+Route::get('/admin/report', [ReportController::class, 'indexAdmin']);
 
 // PAYMENT AWAL
 // Route::get('/payment', [PaymentController::class, 'payment']);

@@ -140,5 +140,13 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item nav-category">Reports</li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/report">
+          <i class="menu-icon mdi mdi-alert-circle-outline"></i>
+          <span class="menu-title">Report</span>
+        </a>
+      </li>
+
     </ul>
   </nav>

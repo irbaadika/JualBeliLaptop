@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alamat;
 use Illuminate\Http\Request;
-use App\Models\Merk;
 
-class DashboardMerkController extends Controller
+class AlamatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class DashboardMerkController extends Controller
      */
     public function index()
     {
-        $merk = Merk::paginate(10);
-        return view('dashboard.merk.index', compact('merk'));
-
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class DashboardMerkController extends Controller
      */
     public function create()
     {
-        return view('dashboard.merk.create');
+        //
     }
 
     /**
@@ -37,14 +35,21 @@ class DashboardMerkController extends Controller
      */
     public function store(Request $request)
     {
+        $id = $request->get('user_id');
         $validatedData = $request->validate([
-            'name' => 'required|unique:merks'
+            'user_id' => 'required',
+            'jalan' => 'required',
+            'kelurahan' => 'required',
+            'kecamatan' => 'required',
+            'kota' => 'required',
+            'provinsi' => 'required',
+            'kodePos' => 'required|numeric|digits:5'
+            
         ]);
 
-        Merk::create($validatedData);
-
-        return redirect('/admin/merk')->with('success', 'Kategori baru telah ditambahkan');
-
+        Alamat::create($validatedData);
+        
+        return redirect('/profile' . '/' . $id)->with('successAdd', 'Product baru telah ditambahkan');
     }
 
     /**
@@ -66,8 +71,7 @@ class DashboardMerkController extends Controller
      */
     public function edit($id)
     {
-        $merk = Merk::where('id', $id)->first();
-        return view('dashboard.merk.edit', compact('merk'));
+        //
     }
 
     /**
@@ -79,17 +83,7 @@ class DashboardMerkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-
-        $merk = Merk::where('id', $id)->first();
-        $merk->name = $request->get('name');
-       
-        $merk->save();
-
-        return redirect('/admin/merk')->with('success', 'Merk berhasil diedit');
-
+        //
     }
 
     /**
@@ -100,8 +94,6 @@ class DashboardMerkController extends Controller
      */
     public function destroy($id)
     {
-        Merk::where('id', $id)->delete();
-        return redirect('/admin/merk')->with('success', 'Kategori telah dihapus');
-
+        //
     }
 }
