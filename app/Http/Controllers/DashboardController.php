@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Merk;
 use App\Models\User;
 use App\Models\Service;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -17,6 +18,7 @@ class DashboardController extends Controller
         $category = Category::all();
         $merk = Merk::all();
         $product = Product::all();
+        $transaksi = Transaksi::all();
         $seller = User::where('role','seller');
         $admin = User::where('role','admin');
         $buyer = User::where('role','buyer');
@@ -27,6 +29,7 @@ class DashboardController extends Controller
             'seller' => $seller,
             'admin' => $admin,
             'buyer' => $buyer,
+            'transaksi' => $transaksi,
         ]);
     }
 
@@ -40,10 +43,12 @@ class DashboardController extends Controller
         $category = Category::all();
         $product = Product::where('seller_id', $seller->id);
         $service = Service::where('seller_id', $seller->id);
+        $transaksi = Transaksi::where('seller_id', $seller->id);
             return view('dashboardSeller.index',[
                 'category' => $category,
                 'product' => $product,
                 'service' => $service,
+                'transaksi' => $transaksi,
             ]);
        }
     }

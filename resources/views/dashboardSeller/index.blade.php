@@ -27,7 +27,7 @@
                     </div>
                     <div class="d-none d-md-block">
                       <p class="statistics-title">Transaction</p>
-                      <h4 class="rate-percentage">4 Transactions</h4>
+                      <h4 class="rate-percentage">{{ $transaksi->count() }} Transactions</h4>
                       
                     </div>
                   </div>

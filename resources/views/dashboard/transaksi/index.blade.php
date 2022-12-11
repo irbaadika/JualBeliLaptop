@@ -32,7 +32,7 @@
           <td>{{ $t->jumlah }}</td>
           <td>{{ currency_IDR($t->harga) }}</td>
           <td>
-            @if ($t->varify == 0)
+            @if ($t->verify == 0)
                 <span class="badge bg-warning text-black"><i class="bi bi-dash-circle-dotted me-2"></i>Pending</span>
             @else
                 <span class="badge bg-success"><i class="bi bi-check-circle me-2"></i>Success</span>
