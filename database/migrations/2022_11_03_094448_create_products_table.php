@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('merk_id');
+            $table->foreignId('merk_id');
             $table->string('type');
-            $table->string('category_id');
-            $table->string('seller_id');
+            $table->foreignId('category_id');
+            $table->foreignId('seller_id');
             $table->string('deskripsi');
             $table->string('harga');
             $table->string('stok');

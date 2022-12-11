@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->foreignId('user_id');
             $table->string('subject');
-            $table->string('seller_id');
+            $table->foreignId('seller_id');
             $table->string('content');
             $table->string('bukti')->nullable();
             $table->timestamps();

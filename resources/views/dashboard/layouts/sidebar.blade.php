@@ -136,7 +136,7 @@
         </a>
         <div class="collapse" id="trans">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/transaksi">Manage Transaction</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/transaksi">Manage Transaction</a></li>
           </ul>
         </div>
       </li>

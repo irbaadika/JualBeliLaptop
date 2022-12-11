@@ -14,6 +14,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\SellerMerkController;
 use App\Http\Controllers\DashboardMerkController;
 use App\Http\Controllers\SellerProductController;
@@ -121,6 +122,12 @@ Route::post('/service', [ServiceController::class, 'store']);
 Route::get('/sellerService', [ServiceController::class, 'indexSeller']);
 Route::get('/sellerService/{id}', [ServiceController::class, 'show']);
 
+Route::get('/admin/transaksi', [TransaksiController::class, 'indexAdmin']);
+Route::get('/sellerTransaksi', [TransaksiController::class, 'indexSeller']);
+Route::get('/transaksi', [TransaksiController::class, 'index']);
+Route::post('/transaksi', [TransaksiController::class, 'store']);
+Route::get('/verifyTransaksi', [TransaksiController::class, 'verify']);
+
 Route::get('/report/{id}', [ReportController::class, 'index']);
 Route::post('/report', [ReportController::class, 'store']);
 
@@ -131,5 +138,5 @@ Route::get('/admin/report', [ReportController::class, 'indexAdmin']);
 // Route::post('/payment', [PaymentController::class, 'payment_post']);
 
 // PAYMENT CART
-Route::get('/cart', [KeranjangController::class, 'payment']);
-Route::post('/cart', [KeranjangController::class, 'payment_post']);
+// Route::get('/payment', [KeranjangController::class, 'payment']);
+// Route::post('/payment', [KeranjangController::class, 'payment_post']);

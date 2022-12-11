@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('npwp')->unique();
             $table->string('alamat');
             $table->string('verify')->default(0);
-            $table->string('user_id');
+            $table->foreignId('user_id');
             $table->string('photo')->nullable();
             $table->string('doc')->nullable();
             $table->rememberToken();

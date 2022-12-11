@@ -16,6 +16,13 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('bukti');
+            $table->foreignId('user_id');
+            $table->foreignId('seller_id');
+            $table->foreignId('product_id');
+            $table->string('jumlah');
+            $table->string('harga');
+            $table->integer('verify')->default(0);
         });
     }
 
