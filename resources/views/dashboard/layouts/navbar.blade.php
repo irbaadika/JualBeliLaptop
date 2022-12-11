@@ -31,7 +31,7 @@
               <p class="mb-1 mt-3 font-weight-semibold">{{ auth()->user()->name }}</p>
               <p class="fw-light text-muted mb-0">{{ auth()->user()->email }}</p>
             </div>
-            <a href="/admin/user/{{  auth()->user()->id }}" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile </a>
+            {{-- <a href="/admin/user/{{  auth()->user()->id }}" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile </a> --}}
             <form action="/logout" action="get">
               @csrf
               <button type="submit"  class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Logout</button>

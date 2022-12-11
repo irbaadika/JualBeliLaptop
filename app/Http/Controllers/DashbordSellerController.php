@@ -74,38 +74,52 @@ class DashbordSellerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $userId = $request->get('user_id');
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required|numeric',
-            'toko' => 'required',
-            'alamat' => 'required',
-            'npwp' => 'required',
-            'photo' => 'image|file|max:2048'
-        ]);
-
-        $user = User::where('id', $userId)->first();
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-        $user->phone = $request->get('phone');
-
-        $seller = Seller::where('id', $id)->first();
-        $seller->toko = $request->get('toko');
-        $seller->alamat = $request->get('alamat');
-        $seller->npwp = $request->get('npwp');
-
         if($request->file('photo')){
-            if($request->oldPhoto){
-                Storage::delete($request->oldPhoto);
+            $request->validate([
+                'photo' => 'image|file|max:2048'
+            ]);
+    
+            $seller = Seller::where('id', $id)->first();
+    
+            if($request->file('photo')){
+                if($request->oldPhoto){
+                    Storage::delete($request->oldPhoto);
+                }
+                $seller->photo = $request->file('photo')->store('seller-img');
             }
-            $seller->photo = $request->file('photo')->store('user-img');
+            
+            $seller->save();
+        }elseif($request->get('name')){
+            $user_id = $request->get('user_id');
+            $user = User::where('id', $user_id)->first();
+            $user->name = $request->get('name');
+            $user->save();
+        }elseif($request->get('toko')){
+            $seller = Seller::where('id', $id)->first();
+            $seller->toko = $request->get('toko');
+            $seller->save();
+        }elseif($request->get('email')){
+            $user_id = $request->get('user_id');
+            $user = User::where('id', $user_id)->first();
+            $user->email = $request->get('email');
+            $user->save();
+        }elseif($request->get('alamat')){
+            $seller = Seller::where('id', $id)->first();
+            $seller->alamat = $request->get('alamat');
+            $seller->save();
+        }elseif($request->get('phone')){
+            $user_id = $request->get('user_id');
+            $request->validate([
+                'phone' => 'nullable|numeric',
+            ]);
+            $user = User::where('id', $user_id)->first();
+            $user->phone = $request->get('phone');
+            $user->save();
         }
 
-        $user->save();
-        $seller->save();
 
-        return redirect('/admin/seller')->with('success', 'Seller berhasil diedit');
+        return redirect('/dashboardSeller/profile' . '/' . $id )->with('success', 'Buyer berhasil diedit');
+
     }
 
     /**

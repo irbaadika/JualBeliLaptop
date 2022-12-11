@@ -58,6 +58,7 @@ Route::get('/seller', function () {
     return view('registerSeller');
 });
 
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard.index');
 // })->middleware('checkRole:admin');
@@ -111,6 +112,7 @@ Route::resource('/sellerProduct', SellerProductController::class);
 Route::resource('/alamat', AlamatController::class);
 
 Route::get('/profile/{id}', [ProfileController::class, 'index']);
+Route::get('/dashboardSeller/profile/{id}', [ProfileController::class, 'indexSeller']);
 
 Route::get('/toko/{id}', [TokoController::class, 'index']);
 

@@ -72,4 +72,6 @@ class SellerController extends Controller
 
         return redirect('/admin/seller');
     }
+
+    
 }

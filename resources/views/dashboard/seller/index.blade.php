@@ -55,7 +55,7 @@
           </td>
           <td>
             <a href="/admin/seller/{{ $u->id }}" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a>
-            <a href="/admin/seller/{{ $u->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a>
+            {{-- <a href="/admin/seller/{{ $u->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a> --}}
             <form action="/admin/seller/{{ $u->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
