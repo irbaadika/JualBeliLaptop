@@ -63,15 +63,15 @@
                                                     <img class="img-preview img-fluid mb-3 col-sm-5">
                                                     <input class="form-control @error('bukti') is-invalid @enderror"
                                                         type="file" id="photo" name="bukti" onchange="previewImage()">
-                                                <input class="form-control" type="text" id="product_id" name="product_id"
+                                                <input class="form-control" type="hidden" id="product_id" name="product_id"
                                                     value="{{ $k->product->id }}">
-                                                <input class="form-control" type="text" id="seller_id" name="seller_id"
+                                                <input class="form-control" type="hidden" id="seller_id" name="seller_id"
                                                     value="{{ $k->product->seller->id }}">
-                                                <input class="form-control" type="text" id="harga" name="harga"
+                                                <input class="form-control" type="hidden" id="harga" name="harga"
                                                     value="{{ $k->harga }}">
-                                                <input class="form-control" type="text" id="jumlah" name="jumlah"
+                                                <input class="form-control" type="hidden" id="jumlah" name="jumlah"
                                                     value="{{ $k->jumlah }}">
-                                                <input class="form-control" type="text" id="keranjang_id"
+                                                <input class="form-control" type="hidden" id="keranjang_id"
                                                     name="keranjang_id" value="{{ $k->id }}">
                                             </div>
                                         </div>
