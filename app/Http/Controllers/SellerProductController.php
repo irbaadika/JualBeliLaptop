@@ -94,7 +94,7 @@ class SellerProductController extends Controller
         $product = Product::with('category', 'merk')->where('id', $id)->first();
         $category = Category::all();
         $merk = Merk::all();
-        return view('dashboardSeller.product.edit', compact('product', 'category'));
+        return view('dashboardSeller.product.edit', compact('product', 'category', 'merk'));
     }
 
     /**
