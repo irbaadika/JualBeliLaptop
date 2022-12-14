@@ -56,7 +56,7 @@
           <td>
             <a href="/admin/seller/{{ $u->id }}" class="badge bg-info"><span class="menu-icon mdi mdi-eye"></span></a>
             {{-- <a href="/admin/seller/{{ $u->id }}/edit" class="badge bg-warning"><span class="menu-icon mdi mdi-circle-edit-outline"></span></a> --}}
-            <form action="/admin/seller/{{ $u->id }}" method="post" class="d-inline">
+            <form action="/admin/seller/{{ $u->seller->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ $u->id }}">
