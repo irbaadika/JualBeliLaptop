@@ -2,9 +2,9 @@
 @section('content')
     <div class="container mx-5 my-3">
         @if (session()->has('success'))
-        <div class="alert alert-success col-lg-12" role="alert">
-          {{ session('success') }}
-        </div>
+            <div class="alert alert-success col-lg-12" role="alert">
+                {{ session('success') }}
+            </div>
         @endif
         <div>
             <div class="row">
@@ -229,6 +229,11 @@
                                 value="{{ $seller->user->id }}">
                             <input type="text" class="form-control @error('phone') is-invalid @enderror"
                                 id="phone" name="phone" value="{{ old('phone', $seller->user->phone) }}">
+                            @error('phone')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
