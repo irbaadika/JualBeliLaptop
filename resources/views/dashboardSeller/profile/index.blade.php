@@ -1,6 +1,11 @@
 @extends('dashboardSeller.layouts.main')
 @section('content')
     <div class="container mx-5 my-3">
+        @if (session()->has('success'))
+        <div class="alert alert-success col-lg-12" role="alert">
+          {{ session('success') }}
+        </div>
+        @endif
         <div>
             <div class="row">
                 <div class="col-md-4">
@@ -83,6 +88,11 @@
                             @endif
                             <input class="form-control" type="file" id="photo" name="photo"
                                 onchange="previewImage()">
+                            @error('photo')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -107,8 +117,8 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="type" class="form-label">Nama</label>
-                            <input type="hidden" class="form-control" id="user_id"
-                                name="user_id" value="{{ $seller->user->id }}">
+                            <input type="hidden" class="form-control" id="user_id" name="user_id"
+                                value="{{ $seller->user->id }}">
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
                                 name="name" value="{{ old('name', $seller->user->name) }}">
                         </div>
@@ -161,10 +171,10 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="type" class="form-label">Email</label>
-                            <input type="hidden" class="form-control" id="user_id"
-                                name="user_id" value="{{ $seller->user->id }}">
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
-                                name="email" value="{{ old('email', $seller->user->email) }}">
+                            <input type="hidden" class="form-control" id="user_id" name="user_id"
+                                value="{{ $seller->user->id }}">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                id="email" name="email" value="{{ old('email', $seller->user->email) }}">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -189,8 +199,8 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="type" class="form-label">Alamat</label>
-                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat"
-                                name="alamat" value="{{ old('alamat', $seller->alamat) }}">
+                            <input type="text" class="form-control @error('alamat') is-invalid @enderror"
+                                id="alamat" name="alamat" value="{{ old('alamat', $seller->alamat) }}">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -215,10 +225,10 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="type" class="form-label">Phone Number</label>
-                            <input type="hidden" class="form-control" id="user_id"
-                                name="user_id" value="{{ $seller->user->id }}">
-                            <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
-                                name="phone" value="{{ old('phone', $seller->user->phone) }}">
+                            <input type="hidden" class="form-control" id="user_id" name="user_id"
+                                value="{{ $seller->user->id }}">
+                            <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                id="phone" name="phone" value="{{ old('phone', $seller->user->phone) }}">
                         </div>
                     </div>
                     <div class="modal-footer">

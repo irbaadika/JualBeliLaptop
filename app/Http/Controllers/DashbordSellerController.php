@@ -75,6 +75,7 @@ class DashbordSellerController extends Controller
     public function update(Request $request, $id)
     {
         if($request->file('photo')){
+            $var = 'Photo';
             $request->validate([
                 'photo' => 'image|file|max:2048'
             ]);
@@ -90,24 +91,29 @@ class DashbordSellerController extends Controller
             
             $seller->save();
         }elseif($request->get('name')){
+            $var = 'Nama';
             $user_id = $request->get('user_id');
             $user = User::where('id', $user_id)->first();
             $user->name = $request->get('name');
             $user->save();
         }elseif($request->get('toko')){
+            $var = 'Nama Toko';
             $seller = Seller::where('id', $id)->first();
             $seller->toko = $request->get('toko');
             $seller->save();
         }elseif($request->get('email')){
+            $var = 'Email';
             $user_id = $request->get('user_id');
             $user = User::where('id', $user_id)->first();
             $user->email = $request->get('email');
             $user->save();
         }elseif($request->get('alamat')){
+            $var = 'Alamat';
             $seller = Seller::where('id', $id)->first();
             $seller->alamat = $request->get('alamat');
             $seller->save();
         }elseif($request->get('phone')){
+            $var = 'Phone';
             $user_id = $request->get('user_id');
             $request->validate([
                 'phone' => 'nullable|numeric',
@@ -118,7 +124,7 @@ class DashbordSellerController extends Controller
         }
 
 
-        return redirect('/dashboardSeller/profile' . '/' . $id )->with('success', 'Buyer berhasil diedit');
+        return redirect('/dashboardSeller/profile' . '/' . $id )->with('success', $var . ' berhasil diedit');
 
     }
 
