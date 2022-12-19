@@ -100,9 +100,9 @@ Route::resource('/admin/seller', DashbordSellerController::class);
 
 Route::post('/seller', [SellerController::class, 'store']);
 
-Route::get('/verifySeller', [SellerController::class, 'verify']);
+Route::get('/verifySeller/{id}', [SellerController::class, 'verify']);
 
-Route::get('/blockSeller', [SellerController::class, 'block']);
+Route::get('/blockSeller/{id}', [SellerController::class, 'block']);
 
 Route::resource('/sellerCategory', SellerCategoryController::class);
 

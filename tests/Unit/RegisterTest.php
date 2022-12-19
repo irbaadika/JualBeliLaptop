@@ -91,10 +91,10 @@ class RegisterTest extends TestCase
     //     $response->assertRedirect(route('login'));
     // }
 
-    public function test_verify()
+    public function test_verify_buyer()
     {
         $response = $this->get('/verify',[
-            'request' => '6'
+            'request' => '9'
         ]);
 
         $response->assertRedirect(route('buyer.index'));

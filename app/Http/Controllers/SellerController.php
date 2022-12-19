@@ -49,10 +49,11 @@ class SellerController extends Controller
 
     }
 
-    public function verify(Request $request)
+    public function verify($id)
     {
 
-        $seller = Seller::where('user_id', $request->id)->first();
+        // $id = 7;
+        $seller = Seller::where('user_id', $id)->first();
         $seller->verify = '1';
 
         $seller->save();
@@ -61,10 +62,10 @@ class SellerController extends Controller
         return redirect('/admin/seller');
     }
 
-    public function block(Request $request)
+    public function block($id)
     {
 
-        $seller = Seller::where('user_id', $request->id)->first();
+        $seller = Seller::where('user_id', $id)->first();
         $seller->verify = '0';
 
         $seller->save();
