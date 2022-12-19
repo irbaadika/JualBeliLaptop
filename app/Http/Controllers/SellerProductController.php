@@ -108,7 +108,7 @@ class SellerProductController extends Controller
     {
         $request->validate([
             'merk_id' => 'required',
-            'type' => 'required|unique:products',
+            'type' => 'required',
             'category_id' => 'required',
             'deskripsi' => 'required',
             'harga' => 'required|numeric',
