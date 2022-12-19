@@ -77,6 +77,7 @@ class DahsboardBuyerController extends Controller
     public function update(Request $request, $id)
     {
         if($request->file('photo')){
+            $var = 'Photo Profile';
             $request->validate([
                 'photo' => 'image|file|max:2048'
             ]);
@@ -92,22 +93,27 @@ class DahsboardBuyerController extends Controller
             
             $user->save();
         }elseif($request->get('name')){
+            $var = 'Nama';
             $user = User::where('id', $id)->first();
             $user->name = $request->get('name');
             $user->save();
         }elseif($request->get('username')){
+            $var = 'Username';
             $user = User::where('id', $id)->first();
             $user->username = $request->get('username');
             $user->save();
         }elseif($request->get('email')){
+            $var = 'Email';
             $user = User::where('id', $id)->first();
             $user->email = $request->get('email');
             $user->save();
         }elseif($request->get('alamat_id')){
+            $var = 'Alamat';
             $user = User::where('id', $id)->first();
             $user->alamat_id = $request->get('alamat_id');
             $user->save();
         }elseif($request->get('phone')){
+            $var = 'No HP';
             $request->validate([
                 'phone' => 'nullable|numeric',
             ]);
@@ -117,7 +123,7 @@ class DahsboardBuyerController extends Controller
         }
 
 
-        return redirect('/profile' . '/' . $id )->with('success', 'Buyer berhasil diedit');
+        return redirect('/profile' . '/' . $id )->with('success', $var . ' berhasil diedit');
 
     }
 

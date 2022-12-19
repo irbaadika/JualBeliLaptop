@@ -68,9 +68,9 @@
                         </td>
                         <td>
                             @if ($t->verify == 0)
-                                <form action="/verifyTransaksi" method="get" class="d-inline">
+                                <form action="/verifyTransaksi/{{ $t->id }}" method="get" class="d-inline">
                                     @csrf
-                                    <input type="hidden" name="id" value="{{ $t->id }}">
+                                    {{-- <input type="hidden" name="id" value="{{ $t->id }}"> --}}
                                     <button type="submit" class="badge bg-warning border-0">Verify</button>
                                 </form>
                             @else

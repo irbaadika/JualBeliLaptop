@@ -126,7 +126,7 @@ Route::get('/admin/transaksi', [TransaksiController::class, 'indexAdmin']);
 Route::get('/sellerTransaksi', [TransaksiController::class, 'indexSeller']);
 Route::get('/transaksi', [TransaksiController::class, 'index']);
 Route::post('/transaksi', [TransaksiController::class, 'store']);
-Route::get('/verifyTransaksi', [TransaksiController::class, 'verify']);
+Route::get('/verifyTransaksi/{id}', [TransaksiController::class, 'verify']);
 
 Route::get('/report/{id}', [ReportController::class, 'index']);
 Route::post('/report', [ReportController::class, 'store']);

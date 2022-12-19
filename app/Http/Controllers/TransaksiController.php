@@ -38,7 +38,7 @@ class TransaksiController extends Controller
             'harga'=>'required',
             'seller_id'=>'required',
             'jumlah'=>'required',
-            'bukti' => 'nullable|image|file|max:2048' 
+            'bukti' => 'required|image|file|max:2048' 
         ]);
         $transaksi = new Transaksi();
         $transaksi->product_id = $request->get('product_id');
@@ -68,9 +68,9 @@ class TransaksiController extends Controller
         return redirect('/cart')->with('success', 'Terima Kasih telah melakukan transaksi');
     }
 
-    public function verify(Request $request){
+    public function verify($id){
       
-        $transaksi = Transaksi::where('id', $request->id)->first();
+        $transaksi = Transaksi::where('id', $id)->first();
             $transaksi->verify = '1';
             $transaksi->save();
 
