@@ -13,7 +13,7 @@ class RegisterTest extends TestCase
      *
      * @return void
      */
-    public function test_duplicate_username()
+    public function test_duplicate_username_register()
     {
         $response = $this->post('/register',[
             'name' => 'auryno nagata',
@@ -26,7 +26,7 @@ class RegisterTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_duplicate_email()
+    public function test_duplicate_email_register()
     {
         $response = $this->post('/register',[
             'name' => 'auryno nagata',
@@ -39,7 +39,7 @@ class RegisterTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_invalid_nohp()
+    public function test_invalid_nohp_register()
     {
         $response = $this->post('/register',[
             'name' => 'auryno nagata',
@@ -52,7 +52,7 @@ class RegisterTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_invalid_password()
+    public function test_invalid_password_register()
     {
         $response = $this->post('/register',[
             'name' => 'auryno nagata',
@@ -65,7 +65,7 @@ class RegisterTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_empty_field()
+    public function test_empty_field_register()
     {
         $response = $this->post('/register',[
             'name' => '',
@@ -78,23 +78,23 @@ class RegisterTest extends TestCase
         $response->assertStatus(302);
     }
 
-    // public function test_success()
-    // {
-    //     $response = $this->post('/register',[
-    //         'name' => 'auryno nagata',
-    //         'username' => 'nagata',
-    //         'phone' => '082232323232',
-    //         'email' => 'nagata@gmail.com',
-    //         'password' => 'password'
-    //     ]);
+    public function test_success_register_buyer()
+    {
+        $response = $this->post('/register',[
+            'name' => 'auryno nagata',
+            'username' => 'nagata',
+            'phone' => '082232323232',
+            'email' => 'nagata@gmail.com',
+            'password' => 'password'
+        ]);
 
-    //     $response->assertRedirect(route('login'));
-    // }
+        $response->assertRedirect(route('login'));
+    }
 
     public function test_verify_buyer()
     {
         $response = $this->get('/verify',[
-            'request' => '9'
+            'request' => '18'
         ]);
 
         $response->assertRedirect(route('buyer.index'));

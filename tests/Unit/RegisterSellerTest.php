@@ -20,7 +20,7 @@ class RegisterSellerTest extends TestCase
             'toko' => 'Nododik',
             'alamat' => 'arjowinangun',
             'npwp' => '1234567890123456',
-            'doc' => new \Illuminate\Http\UploadedFile(public_path('integrity_pact.pdf'), 'doc.pdf', null, null, true),
+            'doc' => new \Illuminate\Http\UploadedFile(public_path('integrity_pact.pdf'), 'integrity_pact.pdf', null, null, true),
         ]);
 
         $response->assertRedirect('/');
@@ -43,7 +43,7 @@ class RegisterSellerTest extends TestCase
             'toko' => 'Nododik',
             'alamat' => 'arjowinangun',
             'npwp' => '12345678901236',
-            'doc' => new \Illuminate\Http\UploadedFile(public_path('integrity_pact.pdf'), 'doc.pdf', null, null, true),
+            'doc' => new \Illuminate\Http\UploadedFile(public_path('integrity_pact.pdf'), 'integrity_pact.pdf', null, null, true),
         ]);
 
         $response->assertStatus(302);

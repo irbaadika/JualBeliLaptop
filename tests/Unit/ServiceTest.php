@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use App\Models\User;
+
 
 class ServiceTest extends TestCase
 {
@@ -15,8 +15,6 @@ class ServiceTest extends TestCase
 
      public function test_empty_type_service()
      {
-        //  $user_id = 7;
-        //  $user = User::where('id', $user_id)->first();
          $response = $this->post('/service',[
              'user_id' => '9',
              'seller_id' => '1',
@@ -33,8 +31,7 @@ class ServiceTest extends TestCase
 
      public function test_empty_merk_service()
      {
-        //  $user_id = 7;
-        //  $user = User::where('id', $user_id)->first();
+
          $response = $this->post('/service',[
              'user_id' => '9',
              'seller_id' => '1',
@@ -51,8 +48,7 @@ class ServiceTest extends TestCase
 
      public function test_empty_phone_service()
      {
-        //  $user_id = 7;
-        //  $user = User::where('id', $user_id)->first();
+
          $response = $this->post('/service',[
              'user_id' => '9',
              'seller_id' => '1',
@@ -69,8 +65,7 @@ class ServiceTest extends TestCase
 
      public function test_empty_keterangan_service()
      {
-        //  $user_id = 7;
-        //  $user = User::where('id', $user_id)->first();
+
          $response = $this->post('/service',[
              'user_id' => '9',
              'seller_id' => '1',
@@ -87,8 +82,7 @@ class ServiceTest extends TestCase
 
      public function test_empty_photo_service()
      {
-        //  $user_id = 7;
-        //  $user = User::where('id', $user_id)->first();
+
          $response = $this->post('/service',[
              'user_id' => '9',
              'seller_id' => '1',
@@ -106,7 +100,6 @@ class ServiceTest extends TestCase
      public function test_success_service()
      {
          $seller_id = 1;
-        //  $user = User::where('id', $user_id)->first();
          $response = $this->post('/service',[
              'user_id' => '9',
              'seller_id' => $seller_id,

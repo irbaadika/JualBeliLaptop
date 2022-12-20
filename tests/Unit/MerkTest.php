@@ -31,7 +31,7 @@ class MerkTest extends TestCase
 
     public function test_edit_merk()
     {
-        $id = '6';
+        $id = '7';
         $response = $this->put('/admin/merk/'. $id ,[
             'name' => 'Alienware'
         ]);
@@ -41,7 +41,7 @@ class MerkTest extends TestCase
 
     public function test_delete_merk()
     {
-        $id = '6';
+        $id = '7';
         $response = $this->delete('/admin/merk/'. $id);
 
         $response->assertRedirect(route('merk.index'));

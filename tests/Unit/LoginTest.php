@@ -11,7 +11,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function test_invalid_password()
+    public function test_invalid_password_login()
     {
         $response = $this->post('/login',[
             'email' => 'irba@gmail.com',
@@ -21,7 +21,7 @@ class LoginTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_invalid_email()
+    public function test_invalid_email_login()
     {
         $response = $this->post('/login',[
             'email' => 'irba2@gmail.com',
@@ -31,7 +31,7 @@ class LoginTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_invalid_email_password()
+    public function test_invalid_email_password_login()
     {
         $response = $this->post('/login',[
             'email' => 'irba2@gmail.com',
@@ -41,7 +41,7 @@ class LoginTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_empy_form()
+    public function test_empy_form_login()
     {
         $response = $this->post('/login',[
             'email' => '',
@@ -51,7 +51,7 @@ class LoginTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_unverified_account()
+    public function test_unverified_account_login()
     {
         $response = $this->post('/login',[
             'email' => 'nicola@gmail.com',
@@ -61,7 +61,7 @@ class LoginTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_success()
+    public function test_success_login()
     {
         $response = $this->post('/login',[
             'email' => 'irba@gmail.com',
