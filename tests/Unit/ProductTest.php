@@ -31,7 +31,7 @@ class ProductTest extends TestCase
 
     public function test_read_product()
     {
-        $id = '8';
+        $id = '10';
         $user_id = '2';
         $user = User::where('id', $user_id)->first();
         $response = $this->actingAs($user)->get('/sellerProduct' . '/' . $id);
@@ -40,7 +40,7 @@ class ProductTest extends TestCase
 
     public function test_edit_product()
     {
-        $id = '8';
+        $id = '10';
         $response = $this->put('/sellerProduct' . '/' . $id,[
             'merk_id' => '2',
             'type' => 'Asus Zenbook Fold',
@@ -57,7 +57,7 @@ class ProductTest extends TestCase
 
     public function test_delete_product()
     {
-        $id = '8';
+        $id = '10';
         $response = $this->delete('/sellerProduct' . '/' . $id);
 
         $response->assertRedirect('/sellerProduct');

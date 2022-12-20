@@ -11,7 +11,7 @@ class CategoryTest extends TestCase
      *
      * @return void
      */
-    public function test_create()
+    public function test_create_category()
     {
         $response = $this->post('/admin/category',[
             'name' => 'Headset'
@@ -20,7 +20,7 @@ class CategoryTest extends TestCase
         $response->assertRedirect(route('category.index'));
     }
 
-    public function test_duplicate_create()
+    public function test_duplicate_create_category()
     {
         $response = $this->post('/admin/category',[
             'name' => 'Laptop'
@@ -29,9 +29,9 @@ class CategoryTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_edit()
+    public function test_edit_category()
     {
-        $id = '14';
+        $id = '15';
         $response = $this->put('/admin/category/'. $id ,[
             'name' => 'Earphone'
         ]);
@@ -39,9 +39,9 @@ class CategoryTest extends TestCase
         $response->assertRedirect(route('category.index'));
     }
 
-    public function test_delete()
+    public function test_delete_category()
     {
-        $id = '14';
+        $id = '15';
         $response = $this->delete('/admin/category/'. $id);
 
         $response->assertRedirect(route('category.index'));
